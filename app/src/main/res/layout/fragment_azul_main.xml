@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- LIST VIEW -->
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- TOOL BAR -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/MyDarkToolbarStyle">
+
+        <!-- LOGO -->
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/moove"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"  />
+    </android.support.v7.widget.Toolbar>
+
+    <!-- DASHBOARD -->
+
+    <TextView
+        android:layout_width="388dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:background="@drawable/dashboard"
+        android:text="Dashboard"
+        android:textColor="#03A9F4"
+        android:textSize="3mm"
+        android:gravity="center_vertical|center_horizontal"
+        android:shadowColor="@color/accent_material_dark" />
+
+    <!-- MOVES-->
+
+    <TextView
+        android:id="@+id/steps_numbers"
+        android:layout_width="275dp"
+        android:layout_height="112dp"
+        android:layout_gravity="center|clip_horizontal"
+        android:textSize="8mm"
+        android:textColor="#87CEFA"
+        android:textAlignment="gravity" />
+
+     <!--MOVES COMMENTS-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/steps"
+        android:layout_marginLeft="15mm"
+        android:textColor="#D2B48C"
+        android:textAlignment="center"
+        android:textSize="2mm"/>
+
+    <!-- SPACE AND BORDERLINE -->
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3mm" />
+
+    <ImageView
+        android:layout_width="40mm"
+        android:layout_height="3mm"
+        android:layout_gravity="center"
+        android:src="@drawable/fading_line"/>
+
+
+    <!-- CALORIES -->
+
+    <!--<TextView-->
+        <!--android:id="@+id/calories_numbers"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="53dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="8mm"-->
+        <!--android:textColor="#87CEFA"-->
+        <!--android:drawableLeft="@mipmap/fire"-->
+        <!--android:drawableRight="@mipmap/burned"-->
+        <!--android:drawablePadding="1dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:paddingRight="5dp" />-->
+
+    <!-- CALORIES COMMENTS-->
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="@string/calories"-->
+        <!--android:textColor="#D2B48C"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="5mm"/>-->
+
+    <!--  ACTIVE COMMENTS-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/sleep_numbers"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="53dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="8mm"-->
+        <!--android:textColor="#87CEFA"-->
+        <!--android:drawableLeft="@mipmap/moon"-->
+        <!--android:drawablePadding="1dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:paddingLeft="5dp" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="@string/sleep"-->
+        <!--android:textColor="#D2B48C"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="5mm"/>-->
+
+</LinearLayout>
+

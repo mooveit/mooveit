@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="MyDarkToolbarStyle" parent="Widget.AppCompat.Toolbar">
+                <item name="android:background">#FF33B5E5</item>
+                <item name="android:layout_gravity">center</item>
+                <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+                <item name="android:statusBarColor">@android:color/transparent</item>
+                <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+                <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        </style>
+</resources>
