@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    package="com.ideyatech.bracelet.main">
+    package="com.ideyatech.moove"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:allowBackup="true"
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15"
+        />
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/moove"
+        android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <!-- android:theme="@style/AppTheme" -->
-
-
-
-        <!--*******************************************************************
-        *                           AZUL MAIN ACTIVITY
-        ********************************************************************-->
         <activity
-            android:name=".AzulMainActivity" >
-
+            android:name=".MainActivity"
+            android:label="@string/title_main_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--*******************************************************************
-       *                           STEPS ACTIVITY
-       ********************************************************************-->
-        <activity
-            android:name="com.ideyatech.bracelet.steps.StepsActivity"
-            android:label="@string/title_activity_steps" >
         </activity>
     </application>
 

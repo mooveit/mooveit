@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- TOOL BAR -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/MyDarkToolbarStyle">
+
+        <!-- LOGO -->
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/moove"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"  />
+    </android.support.v7.widget.Toolbar>
+
+    <!-- DASHBOARD -->
+
+    <TextView
+        android:layout_width="388dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:background="@drawable/dashboard"
+        android:text="Dashboard"
+        android:textColor="#03A9F4"
+        android:textSize="3mm"
+        android:gravity="center_vertical|center_horizontal"
+        android:shadowColor="@color/accent_material_dark" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+
+</LinearLayout>

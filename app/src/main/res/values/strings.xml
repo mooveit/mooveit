@@ -1,27 +1,9 @@
 <resources>
-    <string name="app_name">MOOVE</string>
+    <string name="app_name">Moove</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <string name="you_need">You need</string>
-    <string name="congratulations">Congratulations! Please claim your reward.</string>
-
-
-    <!-- CALORIES -->
-    <string name="calories">Calories</string>
-    <string name="calories_reward">calories to get a reward</string>
-
-    <!-- STEPS -->
-    <string name="sleep">Sleep</string>
-    <string name="sleep_too_much">"You've slept too much!"</string>
-    <string name="sleep_good">You had a good sleep!</string>
-    <string name="sleep_not_enough">"You don't have enough sleep."</string>
-
-
-    <!-- STEPS -->
-    <string name="steps">Steps</string>
-    <string name="steps_reward">moves to get a reward</string>
-    <string name="title_activity_steps">StepsActivity</string>
-    <string name="title_activity_steps_click">StepsClick</string>
-
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
