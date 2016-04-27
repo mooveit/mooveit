@@ -13,10 +13,7 @@ public class RewardsSQL {
     public static final String COLUMN_CLAIMED = "claimed";
     public static final String COLUMN_REWARDFLAG = "rewardflag";
     public static final String COLUMN_MECHANICS = "mechanics";
-    public static final String COLUMN_TARGETCALORIES = "targetcalories";
-    public static final String COLUMN_TARGETSLEEP = "targetsleep";
-    public static final String COLUMN_TARGETMOVE = "targetmove";
-    public static final String COLUMN_TARGETACTIVE = "targetactive";
+    public static final String COLUMN_TARGET = "target";
     public static final String COLUMN_PROMOSTART = "promostart";
     public static final String COLUMN_PROMOEND= "promoend";
 
@@ -29,10 +26,7 @@ public class RewardsSQL {
             + COLUMN_CLAIMED +  " int "
             + COLUMN_REWARDFLAG + " int, "
             + COLUMN_MECHANICS + " text not null, "
-            + COLUMN_TARGETCALORIES + " int, "
-            + COLUMN_TARGETSLEEP + " int, "
-            + COLUMN_TARGETMOVE +  " int, "
-            + COLUMN_TARGETACTIVE + " int, "
+            + COLUMN_TARGET + " int, "
             + COLUMN_PROMOSTART + " datetime, "
             + COLUMN_PROMOEND + " datetime "
             + ");";

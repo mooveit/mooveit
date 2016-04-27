@@ -1,6 +1,5 @@
 package com.ideyatech.moove.beans;
 
-import java.util.Date;
 
 /**
  * Created by IDT-Maynelson-PC on 4/22/2016.
@@ -8,31 +7,35 @@ import java.util.Date;
 public class Reward {
 
     private String name;
-    private String imageId;
+    private String merchant;
+    private int imageId;
     private String description;
-    private Date expiration;
+    private String expiration;
     private String mechanics;
     private int targetCalories;
     private int targetMoves;
     private int targetNumberOfMinutes;
 
-    public Reward(String name,
-                  String imageId,
+    public Reward(int imageId,
+                  String name,
+                  String merchant,
                   String description,
-                  Date expiration,
-                  String mechanics,
-                  int targetCalories,
-                  int targetMoves,
-                  int targetNumberOfMinutes)
+                  String expiration
+                  //String mechanics
+                  //int targetCalories,
+                  //int targetMoves,
+                  //int targetNumberOfMinutes
+                  )
     {
         this.name = name;
+        this.merchant = merchant;
         this.imageId = imageId;
         this.description = description;
         this.expiration = expiration;
         this.mechanics = mechanics;
-        this.targetCalories = targetCalories;
-        this.targetMoves = targetMoves;
-        this.targetNumberOfMinutes = targetNumberOfMinutes;
+//        this.targetCalories = targetCalories;
+//        this.targetMoves = targetMoves;
+//        this.targetNumberOfMinutes = targetNumberOfMinutes;
     }
 
     public String getName() {
@@ -43,11 +46,19 @@ public class Reward {
         this.name = name;
     }
 
-    public String getImageId() {
+    public String getMerchant() {
+        return merchant;
+    }
+
+    public void setMerchant(String merchant) {
+        this.merchant = merchant;
+    }
+
+    public int getImageId() {
         return imageId;
     }
 
-    public void setImageId(String imageId) {
+    public void setImageId(int imageId) {
         this.imageId = imageId;
     }
 
@@ -59,11 +70,11 @@ public class Reward {
         this.description = description;
     }
 
-    public Date getExpiration() {
+    public String getExpiration() {
         return expiration;
     }
 
-    public void setExpiration(Date expiration) {
+    public void setExpiration(String expiration) {
         this.expiration = expiration;
     }
 

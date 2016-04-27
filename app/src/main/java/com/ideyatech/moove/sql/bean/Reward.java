@@ -11,10 +11,7 @@ public class Reward {
     public int claimed;
     public int rewardflag;
     public String mechanics;
-    public int targetcalories;
-    public int  targetsleep;
-    public int targetmove;
-    public int targetactive;
+    public int target;
     public Date promostart;
     public Date promoend;
 
@@ -74,36 +71,12 @@ public class Reward {
         this.mechanics = mechanics;
     }
 
-    public int getTargetcalories() {
-        return targetcalories;
+    public int getTarget() {
+        return target;
     }
 
-    public void setTargetcalories(int targetcalories) {
-        this.targetcalories = targetcalories;
-    }
-
-    public int getTargetsleep() {
-        return targetsleep;
-    }
-
-    public void setTargetsleep(int targetsleep) {
-        this.targetsleep = targetsleep;
-    }
-
-    public int getTargetmove() {
-        return targetmove;
-    }
-
-    public void setTargetmove(int targetmove) {
-        this.targetmove = targetmove;
-    }
-
-    public int getTargetactive() {
-        return targetactive;
-    }
-
-    public void setTargetactive(int targetactive) {
-        this.targetactive = targetactive;
+    public void setTarget(int targetcalories) {
+        this.target = targetcalories;
     }
 
     public Date getPromostart() {

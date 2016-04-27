@@ -6,10 +6,10 @@ package com.ideyatech.moove.beans;
 public class Merchant {
 
     private String name;
-    private String logoId;
+    private int logoId;
     private String website;
 
-    public Merchant(String name, String logoId, String website) {
+    public Merchant(int logoId, String name, String website) {
         this.name = name;
         this.logoId = logoId;
         this.website = website;
@@ -23,11 +23,11 @@ public class Merchant {
         this.name = name;
     }
 
-    public String getLogoId() {
+    public int getLogoId() {
         return logoId;
     }
 
-    public void setLogoId(String logoId) {
+    public void setLogoId(int logoId) {
         this.logoId = logoId;
     }
 

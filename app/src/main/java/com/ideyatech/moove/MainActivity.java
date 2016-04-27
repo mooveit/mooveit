@@ -2,6 +2,7 @@ package com.ideyatech.moove;
 import java.util.ArrayList;
 import java.util.List;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,16 +23,17 @@ public class MainActivity extends AppCompatActivity implements
         OnItemClickListener {
 
     public static final String[] values = new String[] { "2200" + " moves",
-            "180" + " calories", "8" + " minutes active"};
+            "180" + " calories", "13 hrs. 08 mins.", "8" + " minutes active"};
 
     
     public static final String[] rewardComment = new String[] {
             "You need 500 moves to get reward",
             "Burn 3000 calories to get reward",
-            "You've slept way to much"};
+            "You've slept way too much!",
+            "Be active for 23 mins. to get a reward"};
 
     public static final Integer[] images = { R.drawable.step,
-            R.drawable.fire, R.drawable.active };
+            R.drawable.fire, R.drawable.sleep, R.drawable.active };
 
     ListView listView;
     List<DashboardRowItem> dashboardRowItems;
@@ -52,6 +55,17 @@ public class MainActivity extends AppCompatActivity implements
         setSupportActionBar(myToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        //MINE
+        Button reward = (Button) findViewById(R.id.dash);
+
+        reward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), RewardsActivity.class);
+                startActivity(i);
+            }
+        });
 
         dashboardRowItems = new ArrayList<DashboardRowItem>();
         for (int i = 0; i < values.length; i++) {
