@@ -12,23 +12,11 @@
 
     <!-- CHART -->
 
-    <com.github.mikephil.charting.charts.BarChart
+    <com.github.mikephil.charting.charts.HorizontalBarChart
         android:id="@+id/monthlychart"
         android:layout_width="match_parent"
         android:layout_height="35mm"
         android:layout_below="@id/monthlychartspace"/>
 
-    <ImageView
-        android:id="@+id/myRectangleView"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_below="@id/monthlychart"
-        android:background="@drawable/chartcalendarborder"/>
-
-    <ListView
-        android:id="@+id/monthlylist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/myRectangleView"/>
 
 </RelativeLayout>

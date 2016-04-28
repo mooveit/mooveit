@@ -13,25 +13,12 @@
 
     <!-- CHART -->
 
-    <com.github.mikephil.charting.charts.BarChart
+    <com.github.mikephil.charting.charts.HorizontalBarChart
         android:id="@+id/hourlychart"
         android:layout_width="match_parent"
         android:layout_height="35mm"
         android:layout_below="@id/hourlychartspace"/>
 
-    <!-- BORDER -->
 
-    <ImageView
-        android:id="@+id/myRectangleView"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_below="@id/hourlychart"
-        android:background="@drawable/chartcalendarborder"/>
-
-    <ListView
-        android:id="@+id/hourlylist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/myRectangleView"/>
 
 </RelativeLayout>
