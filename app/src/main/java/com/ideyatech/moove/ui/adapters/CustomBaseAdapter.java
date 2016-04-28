@@ -1,5 +1,6 @@
-package com.ideyatech.moove.adapters;
+package com.ideyatech.moove.ui.adapters;
 
+import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -10,28 +11,27 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ideyatech.moove.ui.beans.DashboardRowItem;
 import com.ideyatech.moove.R;
-import com.ideyatech.moove.beans.Merchant;
-
-import java.util.List;
 
 /**
- * Created by kendeng on 4/22/2016.
+ *
  */
-public class MerchantAdapter extends BaseAdapter {
-
+public class CustomBaseAdapter extends BaseAdapter {
+    
     Context context;
-    List<Merchant> merchantItems;
+    List<DashboardRowItem> dashboardRowItems;
 
-    public MerchantAdapter(Context context, List<Merchant> items) {
+    public CustomBaseAdapter(Context context, List<DashboardRowItem> items) {
         this.context = context;
-        this.merchantItems = items;
+        this.dashboardRowItems = items;
     }
 
+    /*private view holder class*/
     private class ViewHolder {
         ImageView imageView;
-        TextView txtName;
-        TextView txtWebsite;
+        TextView txtValue;
+        TextView txtRewardComment;
         ImageView border;
     }
 
@@ -41,10 +41,10 @@ public class MerchantAdapter extends BaseAdapter {
         LayoutInflater mInflater = (LayoutInflater)
                 context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.merchant_list, null);
+            convertView = mInflater.inflate(R.layout.list_item, null);
             holder = new ViewHolder();
-            holder.txtName = (TextView) convertView.findViewById(R.id.name);
-            holder.txtWebsite = (TextView) convertView.findViewById(R.id.website);
+            holder.txtRewardComment = (TextView) convertView.findViewById(R.id.desc);
+            holder.txtValue = (TextView) convertView.findViewById(R.id.title);
             holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
             holder.border = (ImageView) convertView.findViewById(R.id.border);
             convertView.setTag(holder);
@@ -53,11 +53,12 @@ public class MerchantAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Merchant merchantItems = (Merchant) getItem(position);
+        DashboardRowItem dashboardRowItem = (DashboardRowItem) getItem(position);
 
-        holder.txtName.setText(merchantItems.getName());
-        holder.txtWebsite.setText(merchantItems.getWebsite());
-        holder.imageView.setImageResource(merchantItems.getLogoId());
+        holder.txtRewardComment.setText(dashboardRowItem.getRewardComment());
+        holder.txtValue.setText(dashboardRowItem.getValue());
+        holder.txtRewardComment.setTypeface(null, Typeface.ITALIC);
+        holder.imageView.setImageResource(dashboardRowItem.getImageId());
         holder.border.setImageResource(R.drawable.fading_line);
 
         return convertView;
@@ -65,16 +66,16 @@ public class MerchantAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return merchantItems.size();
+        return dashboardRowItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return merchantItems.get(position);
+        return dashboardRowItems.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return merchantItems.indexOf(getItem(position));
+        return dashboardRowItems.indexOf(getItem(position));
     }
 }

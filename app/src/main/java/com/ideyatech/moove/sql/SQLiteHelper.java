@@ -5,8 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.ideyatech.moove.beans.Merchant;
-import com.ideyatech.moove.beans.Reward;
 import com.ideyatech.moove.sql.commands.ActiveSQL;
 import com.ideyatech.moove.sql.commands.CaloriesSQL;
 import com.ideyatech.moove.sql.commands.MerchantsSQL;

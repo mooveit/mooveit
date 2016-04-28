@@ -8,15 +8,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.ideyatech.moove.adapters.RewardAdapter;
-import com.ideyatech.moove.beans.Reward;
+import com.ideyatech.moove.ui.adapters.RewardAdapter;
+import com.ideyatech.moove.ui.beans.Reward;
 import com.ideyatech.moove.rewards.GU;
 import com.ideyatech.moove.sql.dataSource.RewardDataSource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -65,6 +63,27 @@ public class RewardsActivity extends AppCompatActivity implements
         RewardAdapter adapter = new RewardAdapter(this, rds.getData(null));
         listView.setAdapter(adapter);
 
+        //MINE
+        Button dash = (Button) findViewById(R.id.dash);
+        Button merchant = (Button) findViewById(R.id.merchant);
+//        Button account = (Button) findViewById()
+
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        merchant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), MerchantActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 

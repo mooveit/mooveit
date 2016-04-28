@@ -1,4 +1,4 @@
-package com.ideyatech.moove.beans;
+package com.ideyatech.moove.ui.beans;
 
 /**
  * Created by IDT-Maynelson-PC on 4/22/2016.

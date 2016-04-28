@@ -1,22 +1,21 @@
 package com.ideyatech.moove;
 import java.util.ArrayList;
 import java.util.List;
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.ideyatech.moove.adapters.CustomBaseAdapter;
-import com.ideyatech.moove.beans.DashboardRowItem;
+import com.ideyatech.moove.ui.adapters.CustomBaseAdapter;
+import com.ideyatech.moove.bar.bar;
+import com.ideyatech.moove.ui.beans.DashboardRowItem;
 
 
 public class MainActivity extends AppCompatActivity implements
@@ -57,12 +56,23 @@ public class MainActivity extends AppCompatActivity implements
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //MINE
-        Button reward = (Button) findViewById(R.id.dash);
+        Button reward = (Button) findViewById(R.id.reward);
+        Button merchant = (Button) findViewById(R.id.merchant);
+//        Button account = (Button) findViewById()
 
         reward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), RewardsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        merchant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), MerchantActivity.class);
                 startActivity(i);
             }
         });
@@ -92,10 +102,17 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {
-        Toast toast = Toast.makeText(getApplicationContext(),
-                "Item " + (position + 1) + ": " + dashboardRowItems.get(position),
-                Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM| Gravity.CENTER_HORIZONTAL, 0, 0);
-        toast.show();
+//        Toast toast = Toast.makeText(getApplicationContext(),
+//                "Item " + (position + 1) + ": " + dashboardRowItems.get(position),
+//                Toast.LENGTH_SHORT);
+//        toast.setGravity(Gravity.BOTTOM| Gravity.CENTER_HORIZONTAL, 0, 0);
+//        toast.show();
+//        Log.d("king", "garcia");
+
+    }
+
+    public void bar(View view){
+        Intent i = new Intent(getApplicationContext(), bar.class);
+        startActivity(i);
     }
 }

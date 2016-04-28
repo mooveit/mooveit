@@ -1,19 +1,20 @@
-package com.ideyatech.moove;
+    package com.ideyatech.moove;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
-import com.ideyatech.moove.adapters.MerchantAdapter;
-import com.ideyatech.moove.beans.Merchant;
+import com.ideyatech.moove.ui.adapters.MerchantAdapter;
+import com.ideyatech.moove.ui.beans.Merchant;
 import com.ideyatech.moove.sql.dataSource.MerchantDataSource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MerchantActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
@@ -53,6 +54,28 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
         MerchantAdapter adapter = new MerchantAdapter(this, mds.getData(null));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
+        //MINE
+        Button reward = (Button) findViewById(R.id.reward);
+        Button dash = (Button) findViewById(R.id.dash);
+//        Button account = (Button) findViewById()
+
+        reward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), RewardsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 

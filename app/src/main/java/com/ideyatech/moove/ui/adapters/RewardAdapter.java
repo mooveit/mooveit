@@ -1,8 +1,7 @@
-package com.ideyatech.moove.adapters;
+package com.ideyatech.moove.ui.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ideyatech.moove.R;
-import com.ideyatech.moove.beans.Reward;
-import com.ideyatech.moove.rewards.GU;
+import com.ideyatech.moove.ui.beans.Reward;
 
 import java.util.List;
 

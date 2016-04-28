@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.sql.bean.Reward;
 import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.bean.Merchant;
-import com.ideyatech.moove.sql.commands.MerchantsSQL;
 import com.ideyatech.moove.sql.commands.RewardsSQL;
 
 import java.util.ArrayList;
@@ -97,9 +95,9 @@ public class RewardDataSource {
         String[] description = new String[] {"Accumulate 20,000 moves to get this.", "Burn 5,000 calories in the next 24hrs to win.", "Sleep at least 8hrs for 5 consecutive days to get this", "Be active for more than 30mins. to get this."};
         String[] expiration = new String[] {"Expires in 3-days", "Expires in 5-days", "Expires in 1-week", "Expires in 1-month"};
 
-        List<com.ideyatech.moove.beans.Reward> lrew = new ArrayList<com.ideyatech.moove.beans.Reward>();
+        List<com.ideyatech.moove.ui.beans.Reward> lrew = new ArrayList<com.ideyatech.moove.ui.beans.Reward>();
         for (int i = 0; i < 4; i++){
-            com.ideyatech.moove.beans.Reward rew = new com.ideyatech.moove.beans.Reward(imageId[i], name[i], merchant[i], description[i], expiration[i]);
+            com.ideyatech.moove.ui.beans.Reward rew = new com.ideyatech.moove.ui.beans.Reward(imageId[i], name[i], merchant[i], description[i], expiration[i]);
             lrew.add(rew);
         }
 

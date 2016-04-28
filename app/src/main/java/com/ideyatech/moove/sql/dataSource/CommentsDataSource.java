@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.ideyatech.moove.beans.Comment;
+import com.ideyatech.moove.ui.beans.Comment;
 import com.ideyatech.moove.sql.SQLiteHelper;
 
 import java.util.ArrayList;

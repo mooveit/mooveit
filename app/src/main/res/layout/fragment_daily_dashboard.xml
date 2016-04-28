@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ideyatech.barchart.DailyDashboardCalendarFragment">
+
+    <!-- SPACE -->
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3mm"
+        android:id="@+id/dailychartspace"/>
+
+    <!-- CHART -->
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/dailychart"
+        android:layout_width="match_parent"
+        android:layout_height="35mm"
+        android:layout_below="@id/dailychartspace"/>
+
+    <ImageView
+        android:id="@+id/myRectangleView"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/dailychart"
+        android:background="@drawable/chartcalendarborder"/>
+
+    <ListView
+        android:id="@+id/dailylist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myRectangleView"/>
+
+</RelativeLayout>

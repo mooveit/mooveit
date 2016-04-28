@@ -1,4 +1,4 @@
-package com.ideyatech.moove.beans;
+package com.ideyatech.moove.ui.beans;
 
 
 public class Comment {

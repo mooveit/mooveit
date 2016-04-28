@@ -8,12 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.sql.bean.Merchant;
 import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.bean.Active;
-import com.ideyatech.moove.sql.bean.DashboardItems;
-import com.ideyatech.moove.sql.commands.ActiveSQL;
 import com.ideyatech.moove.sql.commands.MerchantsSQL;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,9 +93,9 @@ public class MerchantDataSource {
         Integer[] logoId = new Integer[] {R.drawable.tobylogo, R.drawable.adidaslogo, R.drawable.healthylogo, R.drawable.goldlogo};
         String[] website = new String[] {"http://www.tobys.com", "http://shop.adidas.com.ph", "http://www.healthyoptions.com.ph", "http://www.goldsgym.com.ph"};
 
-        List<com.ideyatech.moove.beans.Merchant> lmer = new ArrayList<com.ideyatech.moove.beans.Merchant>();
+        List<com.ideyatech.moove.ui.beans.Merchant> lmer = new ArrayList<com.ideyatech.moove.ui.beans.Merchant>();
         for (int i = 0; i < 4; i++){
-            com.ideyatech.moove.beans.Merchant mer = new com.ideyatech.moove.beans.Merchant(logoId[i], name[i], website[i]);
+            com.ideyatech.moove.ui.beans.Merchant mer = new com.ideyatech.moove.ui.beans.Merchant(logoId[i], name[i], website[i]);
             lmer.add(mer);
         }
 

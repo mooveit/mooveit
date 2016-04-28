@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/icon"
         android:textColor="#03A9F4"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:onClick="bar"/>
 
     <TextView
         android:id="@+id/desc"

@@ -2,13 +2,10 @@ package com.ideyatech.moove.sql.dataSource;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.ideyatech.moove.beans.Comment;
 import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.bean.Calories;
 import com.ideyatech.moove.sql.bean.DashboardItems;
 import com.ideyatech.moove.sql.bean.Moves;
 import com.ideyatech.moove.sql.commands.CaloriesSQL;
@@ -16,7 +13,6 @@ import com.ideyatech.moove.sql.commands.MovesSQL;
 
 import java.util.ArrayList;
 import java.sql.Date;
-import java.util.List;
 
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
