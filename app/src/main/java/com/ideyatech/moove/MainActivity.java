@@ -13,13 +13,17 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
+
 import com.ideyatech.moove.ui.adapters.CustomBaseAdapter;
 import com.ideyatech.moove.bar.bar;
 import com.ideyatech.moove.ui.beans.DashboardRowItem;
+import com.ideyatech.moove.sql.SQLiteHelper;
 
 
-public class MainActivity extends AppCompatActivity implements
-        OnItemClickListener {
+
+public class MainActivity extends AppCompatActivity implements OnItemClickListener {
+
+    public SQLiteHelper dBHelper;
 
     public static final String[] values = new String[] { "2200" + " moves",
             "180" + " calories", "13 hrs. 08 mins.", "8" + " minutes active"};
@@ -46,6 +50,13 @@ public class MainActivity extends AppCompatActivity implements
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //*****************************************************************************************
+        //*                                SET-UP DB HELPER
+        //*****************************************************************************************
+        dBHelper = new SQLiteHelper(this);
+        // open to read and write
+        dBHelper.getWritableDatabase();
 
         //*****************************************************************************************
         //*                                     TOOLBAR

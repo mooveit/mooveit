@@ -37,20 +37,6 @@ public class ActiveDataSource implements DashboardDataSource{
         dbHelper = new SQLiteHelper(context);
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
-    public void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
-    }
-
-    /**
-     *
-     */
-    public void close() {
-        dbHelper.close();
-    }
 
     /**
      *

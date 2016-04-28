@@ -23,7 +23,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_COMMENT = "comment";
 
-    private static final String DATABASE_NAME = "commments.db";
+    private static final String DATABASE_NAME = "moove.db";
     private static final int DATABASE_VERSION = 1;
 
     // Database creation sql statement
@@ -46,6 +46,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    /**
+     *
+     * @param database
+     */
     @Override
     public void onCreate(SQLiteDatabase database) {
 
@@ -54,9 +58,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         //*****************************************************************************
         //*                               CREATE TABLES
         //*****************************************************************************
-
-        database.execSQL(DATABASE_CREATE_COMMENTS);
-        Log.w(SQLiteHelper.class.getName(), " CREATING ACTIVE TABLE");
         database.execSQL(ActiveSQL.DATABASE_CREATE_ACTIVE);
         Log.w(SQLiteHelper.class.getName(), " CREATING CALORIES TABLE");
         database.execSQL(CaloriesSQL.DATABASE_CREATE_CALORIES);
@@ -73,13 +74,18 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     *
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         Log.w(SQLiteHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_COMMENTS);
         db.execSQL("DROP TABLE IF EXISTS " + ActiveSQL.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + CaloriesSQL.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + MerchantsSQL.TABLE_NAME);
