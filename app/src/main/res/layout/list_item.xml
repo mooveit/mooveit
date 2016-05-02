@@ -5,12 +5,22 @@
     android:layout_gravity="center"
     android:focusableInTouchMode="true">
 
+    <Space
+        android:id="@+id/listspace"
+        android:layout_width="match_parent"
+        android:layout_height="3mm"/>
 
+    <Space
+        android:id="@+id/listrightspace"
+        android:layout_width="5mm"
+        android:layout_height="10dp"/>
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_toRightOf="@+id/listrightspace"
+        android:layout_below="@id/listspace"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
 
@@ -19,9 +29,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/icon"
+        android:layout_below="@id/listspace"
         android:textColor="#03A9F4"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:onClick="bar"/>
+
+    <Space
+        android:id="@+id/spacebetweentitle"
+        android:layout_width="1mm"
+        android:layout_height="7mm"
+        android:layout_below="@+id/listspace"
+        android:layout_toRightOf="@+id/title"/>
+
+    <TextView
+        android:id="@+id/units"
+        android:layout_width="wrap_content"
+        android:layout_height="7mm"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/listspace"
+        android:layout_toRightOf="@+id/spacebetweentitle"
+        android:textColor="#2f4f4f"
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/desc"

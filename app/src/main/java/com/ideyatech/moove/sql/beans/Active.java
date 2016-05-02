@@ -1,14 +1,14 @@
-package com.ideyatech.moove.sql.bean;
+package com.ideyatech.moove.sql.beans;
 
 import java.sql.Date;
 
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
  */
-public class Sleep extends DashboardItems {
+public class Active extends DashboardItems {
 
     public int id;
-    public int noOfSleep;
+    public int noOfActive;
     public Date timestamp;
 
     public int getId() {
@@ -19,12 +19,12 @@ public class Sleep extends DashboardItems {
         this.id = id;
     }
 
-    public int getNoOfSleep() {
-        return noOfSleep;
+    public int getNoOfActive() {
+        return noOfActive;
     }
 
-    public void setNoOfSleep(int noOfSleep) {
-        this.noOfSleep = noOfSleep;
+    public void setNoOfActive(int noOfActive) {
+        this.noOfActive = noOfActive;
     }
 
     public Date getTimestamp() {

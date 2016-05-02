@@ -13,7 +13,7 @@ import android.widget.ListView;
 import com.ideyatech.moove.ui.adapters.RewardAdapter;
 import com.ideyatech.moove.ui.beans.Reward;
 import com.ideyatech.moove.rewards.GU;
-import com.ideyatech.moove.sql.dataSource.RewardDataSource;
+import com.ideyatech.moove.sql.dao.RewardDAO;
 
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class RewardsActivity extends AppCompatActivity implements
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        RewardDataSource rds = new RewardDataSource(null);
+        RewardDAO rds = new RewardDAO(null);
 //        rds.getData(null);
 
 //        rewardItems = new ArrayList<Reward>();

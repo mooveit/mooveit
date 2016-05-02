@@ -25,20 +25,16 @@
             android:layout_centerInParent="true"  />
     </android.support.v7.widget.Toolbar>
 
-    <!-- DASHBOARD -->
+    <!-- WHITE SPACE -->
 
-    <!--<TextView-->
-        <!--android:layout_width="388dp"-->
-        <!--android:layout_height="53dp"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:background="@drawable/dashboard"-->
-        <!--android:text="Dashboard"-->
-        <!--android:textColor="#03A9F4"-->
-        <!--android:textSize="3mm"-->
-        <!--android:gravity="center_vertical|center_horizontal"-->
-        <!--android:shadowColor="@color/accent_material_dark" />-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5mm"
+        android:layout_gravity="center"
+        android:layout_below="@id/my_awesome_toolbar"
+        android:background="@drawable/dashboard"/>
 
-
+    <!-- DASHBOARD GRAY BUTTONS -->
 
     <Button
         android:id="@+id/dash"
@@ -73,6 +69,8 @@
         android:layout_toEndOf="@+id/merchant"
         android:background="@drawable/accountnotactive"/>
 
+    <!-- LIST ON MAIN DASHBOARD -->
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
@@ -81,12 +79,5 @@
         android:layout_above="@id/dash"
         android:layout_alignParentStart="true" />
 
-    <ImageView
-        android:id="@+id/border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@id/list"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.ideyatech.moove.sql.bean;
+package com.ideyatech.moove.sql.beans;
 
 import java.sql.Date;
 

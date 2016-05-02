@@ -1,4 +1,4 @@
-package com.ideyatech.moove.sql.bean;
+package com.ideyatech.moove.sql.beans;
 
 /**
  * Created by IDT-Maynelson-PC on 4/22/2016.

@@ -9,6 +9,7 @@ public class DashboardRowItem {
     private int imageId;
     private String value;
     private String rewardComment;
+    private String unit;
 
     /**
      *
@@ -16,11 +17,21 @@ public class DashboardRowItem {
      * @param value
      * @param desc
      */
-    public DashboardRowItem(int imageId, String value, String desc) {
+    public DashboardRowItem(int imageId, String value, String unit, String desc) {
         this.imageId = imageId;
         this.value = value;
         this.rewardComment = desc;
+        this.unit = unit;
     }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     public int getImageId() {
         return imageId;
     }

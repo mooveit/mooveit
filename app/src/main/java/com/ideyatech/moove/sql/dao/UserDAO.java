@@ -1,21 +1,16 @@
-package com.ideyatech.moove.sql.dataSource;
+package com.ideyatech.moove.sql.dao;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.bean.Merchant;
-import com.ideyatech.moove.sql.bean.User;
-import com.ideyatech.moove.sql.commands.MerchantsSQL;
+import com.ideyatech.moove.sql.beans.User;
 import com.ideyatech.moove.sql.commands.UserSQL;
 
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
  */
-public class UserDataSource {
+public class UserDAO {
 
     // Database fields
     private SQLiteDatabase database;
@@ -72,11 +67,13 @@ public class UserDataSource {
 
         String fullname = null;
 
-        Cursor cursor = database.query(UserSQL.TABLE_NAME,                                     // TABLE NAME
-                new String[]{UserSQL.COLUMN_FULLNAME},                                         // FULLNAME TO BE RETURNED
-                UserSQL.COLUMN_USERNAME + "=?" + " and " + UserSQL.COLUMN_PASSWORD + "=?",     // WHERE USERNAME AND PASSWORD
-                new String[]{username, password},                                              // WHERE VALUES
-                null, null, null);
+//        Cursor cursor = database.query(UserSQL.TABLE_NAME,                                     // TABLE NAME
+//                new String[]{UserSQL.COLUMN_FULLNAME},                                         // FULLNAME TO BE RETURNED
+//                UserSQL.COLUMN_USERNAME + "=?" + " and " + UserSQL.COLUMN_PASSWORD + "=?",     // WHERE USERNAME AND PASSWORD
+//                new String[]{username, password},                                              // WHERE VALUES
+//                null, null, null);
+
+        Cursor cursor =   database.rawQuery("SELECT fullname FROM user WHERE username = 'king' and password = 'king';", null);
 
         try {
             fullname = cursor.getString(cursor.getColumnIndexOrThrow(UserSQL.COLUMN_FULLNAME));

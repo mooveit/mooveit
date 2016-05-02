@@ -1,4 +1,4 @@
-package com.ideyatech.moove.sql.dataSource;
+package com.ideyatech.moove.sql.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,34 +6,33 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.bean.Active;
-import com.ideyatech.moove.sql.bean.Calories;
-import com.ideyatech.moove.sql.bean.DashboardItems;
-import com.ideyatech.moove.sql.commands.ActiveSQL;
+import com.ideyatech.moove.sql.beans.DashboardItems;
+import com.ideyatech.moove.sql.beans.Moves;
 import com.ideyatech.moove.sql.commands.CaloriesSQL;
+import com.ideyatech.moove.sql.commands.MovesSQL;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.sql.Date;
 
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
  */
-public class CaloriesDataSource implements DashboardDataSource{
+public class MovesDAO implements DashboardDAO {
 
 
     // Database fields
     private SQLiteDatabase database;
     private SQLiteHelper dbHelper;
     private String[] allColumns = {
-            CaloriesSQL.COLUMN_ID,
-            CaloriesSQL.COLUMN_CALORIES,
-            CaloriesSQL.COLUMN_TIMESTAMP };
+            MovesSQL.COLUMN_ID,
+            MovesSQL.COLUMN_MOVES,
+            MovesSQL.COLUMN_TIMESTAMP };
 
     /**
      *
      * @param context
      */
-    public CaloriesDataSource(Context context) {
+    public MovesDAO(Context context) {
 
         dbHelper = new SQLiteHelper(context);
     }
@@ -60,12 +59,12 @@ public class CaloriesDataSource implements DashboardDataSource{
     @Override
     public void insertData(DashboardItems dashboardItems){
 
-        Calories data = (Calories)dashboardItems;
+        Moves data = (Moves)dashboardItems;
 
         // COLLECT VALUES
         ContentValues values = new ContentValues();
-        values.put(CaloriesSQL.COLUMN_CALORIES, data.getNoOfCalories());
-        values.put(CaloriesSQL.COLUMN_TIMESTAMP, data.getTimestamp().toString());
+        values.put(MovesSQL.COLUMN_MOVES, data.getNoOfMoves());
+        values.put(MovesSQL.COLUMN_TIMESTAMP, data.getTimestamp().toString());
 
         // INSERT VALUES TO TABLE
         long insertId = database.insert(CaloriesSQL.TABLE_NAME, null, values);

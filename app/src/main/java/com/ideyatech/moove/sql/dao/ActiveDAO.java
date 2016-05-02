@@ -1,17 +1,13 @@
-package com.ideyatech.moove.sql.dataSource;
+package com.ideyatech.moove.sql.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.bean.DashboardItems;
-import com.ideyatech.moove.sql.bean.Moves;
-import com.ideyatech.moove.sql.bean.Sleep;
-import com.ideyatech.moove.sql.commands.CaloriesSQL;
-import com.ideyatech.moove.sql.commands.MovesSQL;
-import com.ideyatech.moove.sql.commands.SleepSQL;
+import com.ideyatech.moove.sql.beans.Active;
+import com.ideyatech.moove.sql.beans.DashboardItems;
+import com.ideyatech.moove.sql.commands.ActiveSQL;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -19,58 +15,50 @@ import java.util.ArrayList;
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
  */
-public class SleepDataSource implements DashboardDataSource {
+public class ActiveDAO implements DashboardDAO {
+
+
 
     // Database fields
     private SQLiteDatabase database;
     private SQLiteHelper dbHelper;
     private String[] allColumns = {
-            SleepSQL.COLUMN_ID,
-            SleepSQL.COLUMN_SLEEP,
-            SleepSQL.COLUMN_TIMESTAMP};
+            ActiveSQL.COLUMN_ID,
+            ActiveSQL.COLUMN_ACTIVE,
+            ActiveSQL.COLUMN_TIMESTAMP };
 
     /**
+     *
      * @param context
      */
-    public SleepDataSource(Context context) {
+    public ActiveDAO(Context context) {
 
         dbHelper = new SQLiteHelper(context);
     }
 
-    /**
-     * @throws SQLException
-     */
-    public void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
-    }
 
     /**
      *
-     */
-    public void close() {
-        dbHelper.close();
-    }
-
-    /**
      * @param dashboardItems
      */
     @Override
-    public void insertData(DashboardItems dashboardItems) {
+    public void insertData(DashboardItems dashboardItems){
 
-        Sleep data = (Sleep) dashboardItems;
+        Active active = (Active)dashboardItems;
 
         // COLLECT VALUES
         ContentValues values = new ContentValues();
-        values.put(SleepSQL.COLUMN_SLEEP, data.getNoOfSleep());
-        values.put(SleepSQL.COLUMN_TIMESTAMP, data.getTimestamp().toString());
+        values.put(ActiveSQL.COLUMN_ACTIVE, active.getNoOfActive());
+        values.put(ActiveSQL.COLUMN_TIMESTAMP, active.getTimestamp().toString());
 
         // INSERT VALUES TO TABLE
-        long insertId = database.insert(SleepSQL.TABLE_NAME, null, values);
+        long insertId = database.insert(ActiveSQL.TABLE_NAME, null, values);
 
     }
 
 
     /**
+     *
      * @param dateToday
      */
     public ArrayList<Integer> getDataPerHour(Date dateToday) {
@@ -82,6 +70,7 @@ public class SleepDataSource implements DashboardDataSource {
     }
 
     /**
+     *
      * @param dateToday
      */
     public ArrayList<Integer> getDataPerDay(Date dateToday) {
@@ -95,6 +84,7 @@ public class SleepDataSource implements DashboardDataSource {
 
 
     /**
+     *
      * @param
      */
     public ArrayList<Integer> getDataPerMonth(Date dateToday) {
@@ -103,10 +93,14 @@ public class SleepDataSource implements DashboardDataSource {
     }
 
     /**
+     *
      * @param
      */
     public ArrayList<Integer> getDataPerYear(Date dateToday) {
 
         return new ArrayList<Integer>();
     }
+
+
+
 }

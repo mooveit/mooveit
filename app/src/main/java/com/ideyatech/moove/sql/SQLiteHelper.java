@@ -1,10 +1,12 @@
 package com.ideyatech.moove.sql;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.ideyatech.moove.sql.beans.User;
 import com.ideyatech.moove.sql.commands.ActiveSQL;
 import com.ideyatech.moove.sql.commands.CaloriesSQL;
 import com.ideyatech.moove.sql.commands.MerchantsSQL;
@@ -33,7 +35,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             + " text not null);";
 
     // Database creation sql statement
-
+    SQLiteDatabase database;
 
     /**
      *
@@ -95,6 +97,35 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + UserSQL.TABLE_NAME);
 
         onCreate(db);
+    }
+
+    /**
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    public String validateUsernameAndPassword(String username, String password){
+
+        String fullname = "EMPTY";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(UserSQL.TABLE_NAME,                                            // TABLE NAME
+                 new String[]{UserSQL.COLUMN_FULLNAME},                                         // FULLNAME TO BE RETURNED
+                 UserSQL.COLUMN_USERNAME + " = ? AND " + UserSQL.COLUMN_PASSWORD + " = ?",      // WHERE USERNAME AND PASSWORD
+                 new String[]{username, password}, null, null, null );                          // WHERE VALUES
+
+        cursor.moveToFirst();
+
+        // GET FULLNAME
+        if (cursor.moveToFirst()){
+            do{
+                fullname = cursor.getString(cursor.getColumnIndex(UserSQL.COLUMN_FULLNAME));
+                // do what ever you want here
+            }while(cursor.moveToNext());
+        }
+
+        return fullname;
     }
 
 }

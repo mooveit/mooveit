@@ -1,4 +1,4 @@
-package com.ideyatech.moove.sql.dataSource;
+package com.ideyatech.moove.sql.dao;
 
 /**
  * Created by IDT-Maynelson-PC on 4/22/2016.
@@ -19,7 +19,7 @@ import java.util.List;
 /**
  *
  */
-public class CommentsDataSource {
+public class CommentsDAO {
 
     // Database fields
     private SQLiteDatabase database;
@@ -31,7 +31,7 @@ public class CommentsDataSource {
      *
      * @param context
      */
-    public CommentsDataSource(Context context) {
+    public CommentsDAO(Context context) {
         dbHelper = new SQLiteHelper(context);
     }
 

@@ -1,4 +1,4 @@
-package com.ideyatech.moove.sql.dataSource;
+package com.ideyatech.moove.sql.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.ideyatech.moove.R;
-import com.ideyatech.moove.sql.bean.Merchant;
+import com.ideyatech.moove.sql.beans.Merchant;
 import com.ideyatech.moove.sql.SQLiteHelper;
 import com.ideyatech.moove.sql.commands.MerchantsSQL;
 
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
  */
-public class MerchantDataSource {
+public class MerchantDAO {
 
 
     // Database fields
@@ -33,7 +33,7 @@ public class MerchantDataSource {
      *
      * @param context
      */
-    public MerchantDataSource(Context context) {
+    public MerchantDAO(Context context) {
 
         dbHelper = new SQLiteHelper(context);
     }

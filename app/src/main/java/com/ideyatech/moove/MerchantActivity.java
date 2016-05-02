@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.ideyatech.moove.ui.adapters.MerchantAdapter;
 import com.ideyatech.moove.ui.beans.Merchant;
-import com.ideyatech.moove.sql.dataSource.MerchantDataSource;
+import com.ideyatech.moove.sql.dao.MerchantDAO;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        MerchantDataSource mds = new MerchantDataSource(null);
+        MerchantDAO mds = new MerchantDAO(null);
 //        mds.insertData(null);
 
 //        merchantItems = new ArrayList<Merchant>();

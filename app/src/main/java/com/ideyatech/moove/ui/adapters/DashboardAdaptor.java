@@ -17,24 +17,39 @@ import com.ideyatech.moove.R;
 /**
  *
  */
-public class CustomBaseAdapter extends BaseAdapter {
+public class DashboardAdaptor extends BaseAdapter {
     
     Context context;
     List<DashboardRowItem> dashboardRowItems;
 
-    public CustomBaseAdapter(Context context, List<DashboardRowItem> items) {
+    /**
+     *
+     * @param context
+     * @param items
+     */
+    public DashboardAdaptor(Context context, List<DashboardRowItem> items) {
         this.context = context;
         this.dashboardRowItems = items;
     }
 
-    /*private view holder class*/
+    /**
+     *
+     */
     private class ViewHolder {
         ImageView imageView;
         TextView txtValue;
+        TextView txtUnits;
         TextView txtRewardComment;
         ImageView border;
     }
 
+    /**
+     *
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
 
@@ -45,6 +60,7 @@ public class CustomBaseAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.txtRewardComment = (TextView) convertView.findViewById(R.id.desc);
             holder.txtValue = (TextView) convertView.findViewById(R.id.title);
+            holder.txtUnits = (TextView) convertView.findViewById(R.id.units);
             holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
             holder.border = (ImageView) convertView.findViewById(R.id.border);
             convertView.setTag(holder);
@@ -57,6 +73,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
         holder.txtRewardComment.setText(dashboardRowItem.getRewardComment());
         holder.txtValue.setText(dashboardRowItem.getValue());
+        holder.txtUnits.setText(dashboardRowItem.getUnit());
         holder.txtRewardComment.setTypeface(null, Typeface.ITALIC);
         holder.imageView.setImageResource(dashboardRowItem.getImageId());
         holder.border.setImageResource(R.drawable.fading_line);
@@ -64,6 +81,10 @@ public class CustomBaseAdapter extends BaseAdapter {
         return convertView;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getCount() {
         return dashboardRowItems.size();

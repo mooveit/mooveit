@@ -1,4 +1,4 @@
-package com.ideyatech.moove.sql.dataSource;
+package com.ideyatech.moove.sql.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.ideyatech.moove.R;
-import com.ideyatech.moove.sql.bean.Reward;
+import com.ideyatech.moove.sql.beans.Reward;
 import com.ideyatech.moove.sql.SQLiteHelper;
 import com.ideyatech.moove.sql.commands.RewardsSQL;
 
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by IDT-Maynelson-PC on 4/25/2016.
  */
-public class RewardDataSource {
+public class RewardDAO {
 
     // Database fields
     private SQLiteDatabase database;
@@ -37,7 +37,7 @@ public class RewardDataSource {
      *
      * @param context
      */
-    public RewardDataSource(Context context) {
+    public RewardDAO(Context context) {
 
         dbHelper = new SQLiteHelper(context);
     }
