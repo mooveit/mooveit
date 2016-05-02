@@ -55,6 +55,14 @@ public class MonthlyDashboardCalendarFragment extends Fragment implements IDashb
 
         View v =inflater.inflate(R.layout.fragment_monthly_dashboard,container,false);
 
+        //*******************************************************************
+        //                      BACKGROUND TO WHITE
+        //*******************************************************************
+
+        View root = v.getRootView();
+        // Set the color to white
+        root.setBackgroundColor(getResources().getColor(android.R.color.white));
+
         BarChart chart = (BarChart) v.findViewById(R.id.monthlychart);
 
         // Get X Values and Get Data

@@ -18,7 +18,7 @@ public class qr extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qr);
-//*****************************************************************************************
+        //*****************************************************************************************
         //*                                     TOOLBAR
         //*****************************************************************************************
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);

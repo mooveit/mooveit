@@ -60,6 +60,18 @@ public class DailyDashboardCalendarFragment extends Fragment implements IDashboa
 
         View v =inflater.inflate(R.layout.fragment_daily_dashboard,container,false);
 
+        //*******************************************************************
+        //                      BACKGROUND TO WHITE
+        //*******************************************************************
+
+        View root = v.getRootView();
+        // Set the color to white
+        root.setBackgroundColor(getResources().getColor(android.R.color.white));
+
+        //*******************************************************************
+        //                              BAR
+        //*******************************************************************
+
         BarChart chart = (BarChart) v.findViewById(R.id.dailychart);
 
         // Get X Values and Get Data

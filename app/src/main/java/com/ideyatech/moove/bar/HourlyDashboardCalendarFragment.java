@@ -54,6 +54,14 @@ public class HourlyDashboardCalendarFragment extends Fragment implements IDashbo
 
         View v =inflater.inflate(R.layout.fragment_hourly_dashboard,container,false);
 
+        //*******************************************************************
+        //                      BACKGROUND TO WHITE
+        //*******************************************************************
+
+        View root = v.getRootView();
+        // Set the color to white
+        root.setBackgroundColor(getResources().getColor(android.R.color.white));
+
         BarChart chart = (BarChart) v.findViewById(R.id.hourlychart);
 
         // Get X Values and Get Data

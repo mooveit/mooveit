@@ -38,16 +38,27 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/male"
+        android:background="@drawable/gender_male"
         android:layout_marginTop="60dp"
         android:id="@+id/button"
         android:layout_below="@+id/textView8"
         android:layout_alignStart="@+id/textView8" />
 
+    <ImageView
+        android:id="@+id/gender_border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@+id/textView8"
+        android:layout_toLeftOf="@id/button"
+        android:src="@drawable/gender_border"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"  />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/female"
+        android:background="@drawable/gender_female"
         android:layout_alignTop="@+id/button"
         android:layout_alignEnd="@+id/textView8" />
 
@@ -63,4 +74,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="58dp" />
+
 </RelativeLayout>

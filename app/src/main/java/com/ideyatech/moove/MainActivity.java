@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             "You've slept way too much!",
             "Be active for 23 mins. to get a reward"};
 
-    public static final Integer[] images = { R.drawable.step,
-            R.drawable.fire, R.drawable.sleep, R.drawable.active };
+    public static final Integer[] images = { R.drawable.dashboard_step,
+            R.drawable.fire, R.drawable.dashboard_sleep, R.drawable.active };
 
     ListView listView;
     List<DashboardRowItem> dashboardRowItems;
