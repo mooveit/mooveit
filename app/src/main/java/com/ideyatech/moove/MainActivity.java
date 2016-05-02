@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -22,17 +24,17 @@ import com.ideyatech.moove.ui.beans.DashboardRowItem;
 
 public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
-    public static final String[] values = new String[] { "2200",
-            "180", "100", "8"};
+    public static final String[] values = new String[] { "19,500",
+            "20,000", "12", "8"};
 
     public static final String[] units = new String[] { "moves",
-            "calories burned", "minutes", " minutes active"};
+            "calories burned", "hours", " minutes active"};
     
     public static final String[] rewardComment = new String[] {
             "You need 500 moves to get reward",
-            "Burn 3000 calories to get reward",
+            "Burn 30,000 calories to get reward",
             "You've slept way too much!",
-            "Be active for 23 mins. to get a reward"};
+            "Be active for 23mins. to get a reward"};
 
     public static final Integer[] images = { R.drawable.step,
             R.drawable.fire, R.drawable.sleep, R.drawable.active };
@@ -92,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             }
         });
 
+
+
         //*****************************************************************************************
         //*                                     DASHBOARD LIST
         //*****************************************************************************************
@@ -108,6 +112,10 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         DashboardAdaptor adapter = new DashboardAdaptor(this, dashboardRowItems);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
+//        TextView sleep = (TextView) findViewById(R.id.desc);
+//        if(Integer.parseInt(sleep.getText().toString()) > 8)
+//            sleep.setTextColor(Color.parseColor("#e39493"));
 
     }
 

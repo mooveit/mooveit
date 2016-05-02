@@ -18,12 +18,22 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
+        android:id="@+id/claimed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/claimed"
+        android:layout_below="@+id/mechanics"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="160dp"
-        android:id="@+id/imageView"
+        android:id="@+id/reward"
         android:src="@drawable/gurew"
         android:layout_gravity="center_horizontal"
-        android:foregroundGravity="center"/>
+        android:foregroundGravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/mechanics" />
 
     <TextView
         android:layout_width="390dp"
@@ -33,30 +43,31 @@
         android:textSize="25dp"
         android:textColor="#FFFFFF"
         android:gravity="center"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/reward"
         android:layout_alignParentStart="true"
-        android:id="@+id/textView3" />
+        android:id="@+id/rewardname" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/reward"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/rewardname"
         android:layout_alignParentStart="true"
         android:paddingLeft="30dp"
         android:paddingTop="15dp"
         android:paddingRight="10dp"
-        android:id="@+id/imageView2" />
+        android:id="@+id/medal" />
 
     <TextView
+        android:id="@+id/mechanics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingRight="10dp"
         android:text="Accumulate 20,000 moves to get this reward."
         android:textSize="22dp"
         android:textColor="#FF9900"
-        android:layout_alignBottom="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
+        android:layout_alignBottom="@+id/medal"
+        android:layout_toEndOf="@+id/medal" />
 
     <TextView
         android:layout_width="220dp"
@@ -66,9 +77,9 @@
         android:textSize="20dp"
         android:text="MERCHANT PARTNER:"
         android:textColor="#00CCFF"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/medal"
         android:layout_alignParentStart="true"
-        android:id="@+id/textView4" />
+        android:id="@+id/merchant" />
 
     <TextView
         android:layout_width="300dp"
@@ -76,9 +87,9 @@
         android:textSize="17dp"
         android:text="Toby's Sports (www.tobys.com)"
         android:textColor="#FF9900"
-        android:layout_below="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:id="@+id/textView5" />
+        android:layout_below="@+id/merchant"
+        android:layout_alignStart="@+id/merchant"
+        android:id="@+id/website" />
 
     <TextView
         android:layout_width="220dp"
@@ -87,9 +98,9 @@
         android:textSize="20dp"
         android:text="OTHER DETAILS:"
         android:textColor="#00CCFF"
-        android:layout_below="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:id="@+id/textView6" />
+        android:layout_below="@+id/website"
+        android:layout_alignStart="@+id/website"
+        android:id="@+id/other" />
 
     <TextView
         android:layout_width="320dp"
@@ -97,7 +108,7 @@
         android:layout_gravity="center"
         android:text="- This reward is valid until August 15, 2016 only. \n- You must have the moove app installed on your mobile device upon claiming this reward. "
         android:textSize="12dp"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/other"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView7" />
 
