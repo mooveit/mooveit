@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical" >
 
     <!-- TOOL BAR -->
 
@@ -95,14 +94,7 @@
         android:layout_above="@id/dash"
         android:layout_alignParentStart="true" />
 
-    <ImageView
-        android:id="@+id/border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@id/list"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+
 
 
 
