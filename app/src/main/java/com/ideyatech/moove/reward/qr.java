@@ -1,8 +1,6 @@
-package com.ideyatech.moove.rewards;
+package com.ideyatech.moove.reward;
 
-import android.app.ActionBar;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -18,7 +16,7 @@ public class qr extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qr);
-//*****************************************************************************************
+        //*****************************************************************************************
         //*                                     TOOLBAR
         //*****************************************************************************************
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);

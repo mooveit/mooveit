@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/moove"
+            android:src="@drawable/toolbar_moove"
             android:layout_centerVertical="true"
             android:layout_centerInParent="true"  />
     </android.support.v7.widget.Toolbar>
@@ -39,7 +39,7 @@
         android:id="@+id/imgfullname"
         android:layout_width="15dp"
         android:layout_height="20dp"
-        android:src="@drawable/fullname"
+        android:src="@drawable/registration_fullname"
         android:layout_marginTop="50dp"
         android:layout_marginRight="5dp"
         android:layout_below="@+id/textView9"
@@ -73,7 +73,7 @@
         android:id="@+id/imgpass"
         android:layout_width="15dp"
         android:layout_height="20dp"
-        android:src="@drawable/calendar"
+        android:src="@drawable/registration_birthday"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="5dp"
         android:layout_centerVertical="true"
@@ -154,7 +154,7 @@
         android:textColor="#FFFFFF"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:background="@drawable/mybuttonlogin"
+        android:background="@drawable/button_login"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="38dp" />

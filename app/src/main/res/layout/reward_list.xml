@@ -13,7 +13,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/border"
+        android:background="@drawable/reward_border"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
 
@@ -60,7 +60,7 @@
 
     <Button
         android:id="@+id/arrow"
-        android:background="@drawable/arrow"
+        android:background="@drawable/dashboard_arrow"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="right"

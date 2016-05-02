@@ -1,4 +1,4 @@
-package com.ideyatech.moove.map;
+package com.ideyatech.moove.merchant;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

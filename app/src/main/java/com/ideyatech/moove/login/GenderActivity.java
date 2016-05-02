@@ -11,14 +11,14 @@ import android.widget.Button;
 import com.ideyatech.moove.R;
 
 /**
- * Created by kendeng on 4/28/2016.
+ * Created by kendeng on 4/27/2016.
  */
-public class GetToKnow extends AppCompatActivity {
+public class GenderActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gettoknow);
+        setContentView(R.layout.gender);
 
         //*****************************************************************************************
         //*                                     TOOLBAR
@@ -36,7 +36,7 @@ public class GetToKnow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i =  new Intent(getApplicationContext(), Gender.class);
+                Intent i =  new Intent(getApplicationContext(), HeightActivity.class);
                 startActivity(i);
 
             }

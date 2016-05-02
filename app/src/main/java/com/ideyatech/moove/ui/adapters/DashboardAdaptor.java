@@ -76,7 +76,7 @@ public class DashboardAdaptor extends BaseAdapter {
         holder.txtUnits.setText(dashboardRowItem.getUnit());
         holder.txtRewardComment.setTypeface(null, Typeface.ITALIC);
         holder.imageView.setImageResource(dashboardRowItem.getImageId());
-        holder.border.setImageResource(R.drawable.fading_line);
+        holder.border.setImageResource(R.drawable.dashboard_fading_line);
 
         return convertView;
     }

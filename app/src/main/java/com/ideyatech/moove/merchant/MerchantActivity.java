@@ -1,4 +1,4 @@
-package com.ideyatech.moove;
+package com.ideyatech.moove.merchant;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
-import com.ideyatech.moove.map.MapView;
+import com.ideyatech.moove.R;
+import com.ideyatech.moove.main.MainActivity;
+import com.ideyatech.moove.reward.RewardsActivity;
 import com.ideyatech.moove.ui.adapters.MerchantAdapter;
 import com.ideyatech.moove.ui.beans.Merchant;
 import com.ideyatech.moove.sql.dao.MerchantDAO;
@@ -62,7 +64,7 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
 //        Button account = (Button) findViewById()
         Button now = (Button) findViewById(R.id.merchant);
 
-        now.setBackgroundResource(R.drawable.merchantactive);
+        now.setBackgroundResource(R.drawable.button_merchantactive);
 
         reward.setOnClickListener(new View.OnClickListener() {
             @Override

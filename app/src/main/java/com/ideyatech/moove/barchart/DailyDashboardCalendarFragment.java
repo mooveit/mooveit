@@ -1,4 +1,4 @@
-package com.ideyatech.moove.bar;
+package com.ideyatech.moove.barchart;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
@@ -17,17 +16,21 @@ import com.ideyatech.moove.R;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by kendeng on 4/27/2016.
  */
-public class MonthlyDashboardCalendarFragment extends Fragment implements IDashboardCalendarFragment {
+public class DailyDashboardCalendarFragment extends Fragment implements IDashboardCalendarFragment {
+
+
+
+
+
 
     /**
      *
      */
-    public MonthlyDashboardCalendarFragment() {
+    public DailyDashboardCalendarFragment() {
         // Required empty public constructor
     }
 
@@ -53,9 +56,21 @@ public class MonthlyDashboardCalendarFragment extends Fragment implements IDashb
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v =inflater.inflate(R.layout.fragment_monthly_dashboard,container,false);
+        View v =inflater.inflate(R.layout.fragment_daily_dashboard,container,false);
 
-        BarChart chart = (BarChart) v.findViewById(R.id.monthlychart);
+        //*******************************************************************
+        //                      BACKGROUND TO WHITE
+        //*******************************************************************
+
+        View root = v.getRootView();
+        // Set the color to white
+        root.setBackgroundColor(getResources().getColor(android.R.color.white));
+
+        //*******************************************************************
+        //                              BAR
+        //*******************************************************************
+
+        BarChart chart = (BarChart) v.findViewById(R.id.dailychart);
 
         // Get X Values and Get Data
         BarData data = new BarData(getXAxisValues(),getDataSet());
@@ -64,7 +79,7 @@ public class MonthlyDashboardCalendarFragment extends Fragment implements IDashb
         Legend l = chart.getLegend();
         l.setEnabled(false);
 
-        // Disable Description
+        // Config of Chart
         chart.setDescription(null);
         chart.setData(data);
         chart.animateXY(2000, 2000);
@@ -74,18 +89,15 @@ public class MonthlyDashboardCalendarFragment extends Fragment implements IDashb
         chart.invalidate();
         chart.setTouchEnabled(false);
         chart.setClickable(false);
-
-
         chart.setDrawMarkerViews(false);
         chart.setDrawGridBackground(false);
         chart.setVerticalFadingEdgeEnabled(true);
-
 
         return v;
     }
 
     /**
-     *
+     * Y
      * @return
      */
     private ArrayList<BarDataSet> getDataSet() {
@@ -93,34 +105,24 @@ public class MonthlyDashboardCalendarFragment extends Fragment implements IDashb
         ArrayList<BarDataSet> dataSets = null;
 
         ArrayList<BarEntry> valueSet1 = new ArrayList<>();
-        BarEntry am1 = new BarEntry(9000, 0);
+        BarEntry am1 = new BarEntry(600, 0);
         valueSet1.add(am1);
-        BarEntry am2 = new BarEntry(1000, 1);
+        BarEntry am2 = new BarEntry(100, 1);
         valueSet1.add(am2);
-        BarEntry am3 = new BarEntry(8000, 2);
+        BarEntry am3 = new BarEntry(500, 2);
         valueSet1.add(am3);
-        BarEntry am4 = new BarEntry(4000, 3);
+        BarEntry am4 = new BarEntry(300, 3);
         valueSet1.add(am4);
-        BarEntry am5 = new BarEntry(2000, 4);
+        BarEntry am5 = new BarEntry(200, 4);
         valueSet1.add(am5);
-        BarEntry am6 = new BarEntry(10000, 5);
+        BarEntry am6 = new BarEntry(800, 5);
         valueSet1.add(am6);
-        BarEntry am7 = new BarEntry(6000, 6);
+        BarEntry am7 = new BarEntry(400, 6);
         valueSet1.add(am7);
-        BarEntry am8 = new BarEntry(2000, 7);
-        valueSet1.add(am8);
-        BarEntry am9 = new BarEntry(5000, 8);
-        valueSet1.add(am9);
-        BarEntry am10 = new BarEntry(4000, 9);
-        valueSet1.add(am10);
-        BarEntry am11 = new BarEntry(300, 10);
-        valueSet1.add(am11);
-        BarEntry am12 = new BarEntry(7000, 11);
-        valueSet1.add(am12);
 
         BarDataSet barDataSet1 = new BarDataSet(valueSet1, null);
         // Color Green
-        barDataSet1.setColor(Color.rgb(255, 20, 147));
+        barDataSet1.setColor(Color.rgb(60, 179, 113));
 
 
         dataSets = new ArrayList<>();
@@ -130,24 +132,21 @@ public class MonthlyDashboardCalendarFragment extends Fragment implements IDashb
     }
 
     /**
-     *
+     * X
      * @return
      */
     private ArrayList<String> getXAxisValues() {
         ArrayList<String> xAxis = new ArrayList<>();
-        xAxis.add("JAN");
-        xAxis.add("FEB");
-        xAxis.add("MAR");
-        xAxis.add("APR");
-        xAxis.add("MAY");
-        xAxis.add("JUN");
-        xAxis.add("JUL");
-        xAxis.add("AUG");
-        xAxis.add("SEP");
-        xAxis.add("OCT");
-        xAxis.add("NOV");
-        xAxis.add("DEC");
-        return xAxis;
+        xAxis.add("4/1");
+        xAxis.add("4/2");
+        xAxis.add("4/3");
+        xAxis.add("4/4");
+        xAxis.add("4/5");
+        xAxis.add("4/6");
+        xAxis.add("4/7");
 
+        return xAxis;
     }
+
+
 }

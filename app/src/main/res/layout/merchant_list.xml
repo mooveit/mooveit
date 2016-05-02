@@ -14,7 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/reward_border"
         android:onClick="map"/>
 
     <TextView

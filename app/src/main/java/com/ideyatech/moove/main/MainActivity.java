@@ -1,4 +1,4 @@
-package com.ideyatech.moove;
+package com.ideyatech.moove.main;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.ideyatech.moove.R;
+import com.ideyatech.moove.barchart.BarChartActivity;
+import com.ideyatech.moove.merchant.MerchantActivity;
+import com.ideyatech.moove.reward.RewardsActivity;
 import com.ideyatech.moove.ui.adapters.DashboardAdaptor;
-import com.ideyatech.moove.bar.bar;
 import com.ideyatech.moove.ui.beans.DashboardRowItem;
 
 
@@ -36,8 +39,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             "You've slept way too much!",
             "Be active for 23mins. to get a reward"};
 
-    public static final Integer[] images = { R.drawable.step,
-            R.drawable.fire, R.drawable.sleep, R.drawable.active };
+    public static final Integer[] images = { R.drawable.dashboard_step,
+            R.drawable.dashboard_fire, R.drawable.dashboard_sleep, R.drawable.dashboard_active};
 
     ListView listView;
     List<DashboardRowItem> dashboardRowItems;
@@ -75,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         Button merchant = (Button) findViewById(R.id.merchant);
         Button now = (Button) findViewById(R.id.dash);
 
-        now.setBackgroundResource(R.drawable.dashboardactive);
+        now.setBackgroundResource(R.drawable.buttons_dashboardactive);
 
         reward.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         String showid = String.valueOf(id);
         Toast.makeText(getApplicationContext(), showid, Toast.LENGTH_LONG).show();
 
-        Intent i = new Intent(getApplicationContext(), bar.class);
+        Intent i = new Intent(getApplicationContext(), BarChartActivity.class);
         startActivity(i);
 
     }
