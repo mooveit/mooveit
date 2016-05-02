@@ -3,14 +3,17 @@
     android:layout_width="6mm"
     android:layout_height="fill_parent"
     android:layout_gravity="center"
-    android:focusableInTouchMode="true">
-
-
+    android:focusableInTouchMode="true"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/border"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
 
@@ -18,9 +21,10 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/icon"
         android:textColor="#03A9F4"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textStyle="bold"/>
 
     <TextView
@@ -30,7 +34,7 @@
         android:layout_below="@+id/name"
         android:layout_toRightOf="@+id/icon"
         android:textColor="#FFB000"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textStyle="bold"/>
 
     <TextView
@@ -41,7 +45,7 @@
         android:layout_toRightOf="@+id/icon"
         android:layout_marginRight="30dp"
         android:textSize="14dp"/>
-        <!-- android:textColor="#FFB000" -->
+    <!-- android:textColor="#FFB000" -->
 
 
     <TextView
@@ -51,7 +55,7 @@
         android:layout_below="@+id/desc"
         android:layout_toRightOf="@+id/icon"
         android:textColor="#00CCFF"
-        android:textSize="14dp"
+        android:textSize="13dp"
         android:textStyle="italic" />
 
     <Button
@@ -60,8 +64,8 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="right"
-        android:layout_marginLeft="135dp"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="100dp"
         android:layout_toEndOf="@id/exp"
         android:onClick="claimreward"/>
 

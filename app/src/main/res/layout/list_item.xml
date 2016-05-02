@@ -3,51 +3,36 @@
     android:layout_width="6mm"
     android:layout_height="fill_parent"
     android:layout_gravity="center"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="#FFFFFF">
 
-    <Space
-        android:id="@+id/listspace"
-        android:layout_width="match_parent"
-        android:layout_height="3mm"/>
-
-    <Space
-        android:id="@+id/listrightspace"
-        android:layout_width="5mm"
-        android:layout_height="10dp"/>
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_toRightOf="@+id/listrightspace"
-        android:layout_below="@id/listspace"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/icon"
-        android:layout_below="@id/listspace"
+        android:layout_marginTop="25dp"
         android:textColor="#03A9F4"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:onClick="bar"/>
-
-    <Space
-        android:id="@+id/spacebetweentitle"
-        android:layout_width="1mm"
-        android:layout_height="7mm"
-        android:layout_below="@+id/listspace"
-        android:layout_toRightOf="@+id/title"/>
 
     <TextView
         android:id="@+id/units"
         android:layout_width="wrap_content"
         android:layout_height="7mm"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/title"
         android:gravity="center_vertical"
-        android:layout_below="@+id/listspace"
-        android:layout_toRightOf="@+id/spacebetweentitle"
         android:textColor="#2f4f4f"
         android:textSize="25dp" />
 
@@ -66,6 +51,81 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingLeft="10dp"
-    android:paddingRight="10dp" />
+        android:paddingRight="10dp" />
 
 </RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="6mm"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:focusableInTouchMode="true"-->
+    <!--android:background="#FFFFFF"-->
+    <!-->-->
+
+    <!--<Space-->
+        <!--android:id="@+id/listspace"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="3mm"/>-->
+
+    <!--<Space-->
+        <!--android:id="@+id/listrightspace"-->
+        <!--android:layout_width="5mm"-->
+        <!--android:layout_height="10dp"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/icon"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:layout_toRightOf="@+id/listrightspace"-->
+        <!--android:layout_below="@id/listspace"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:paddingRight="10dp" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@+id/icon"-->
+        <!--android:layout_below="@id/listspace"-->
+        <!--android:textColor="#03A9F4"-->
+        <!--android:textSize="30dp"-->
+        <!--android:onClick="bar"/>-->
+
+    <!--<Space-->
+        <!--android:id="@+id/spacebetweentitle"-->
+        <!--android:layout_width="1mm"-->
+        <!--android:layout_height="7mm"-->
+        <!--android:layout_below="@+id/listspace"-->
+        <!--android:layout_toRightOf="@+id/title"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/units"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="7mm"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:layout_below="@+id/listspace"-->
+        <!--android:layout_toRightOf="@+id/spacebetweentitle"-->
+        <!--android:textColor="#2f4f4f"-->
+        <!--android:textSize="25dp" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/desc"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="7mm"-->
+        <!--android:layout_below="@+id/title"-->
+        <!--android:layout_toRightOf="@+id/icon"-->
+        <!--android:textColor="#FFB000"-->
+        <!--android:textSize="15dp" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/border"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:paddingRight="10dp" />-->
+
+<!--</RelativeLayout>-->
+

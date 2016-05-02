@@ -27,12 +27,12 @@
 
     <!-- WHITE SPACE -->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5mm"
-        android:layout_gravity="center"
-        android:layout_below="@id/my_awesome_toolbar"
-        android:background="@drawable/dashboard"/>
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="5mm"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_below="@id/my_awesome_toolbar"-->
+        <!--android:background="@drawable/dashboard"/>-->
 
     <!-- DASHBOARD GRAY BUTTONS -->
 
@@ -102,5 +102,6 @@
         android:layout_below="@+id/my_awesome_toolbar"
         android:layout_above="@id/border"
         android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

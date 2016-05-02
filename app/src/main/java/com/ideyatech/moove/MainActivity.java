@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         View someView = findViewById(R.id.list);
         View root = someView.getRootView();
         // Set the color to white
-        root.setBackgroundColor(getResources().getColor(android.R.color.white));
+        //root.setBackgroundColor(getResources().getColor(android.R.color.white));
 
         //*****************************************************************************************
         //*                                     TOOLBAR
