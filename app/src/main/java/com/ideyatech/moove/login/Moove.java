@@ -12,7 +12,7 @@ import com.ideyatech.moove.login.Login;
 /**
  * Created by kendeng on 4/25/2016.
  */
-public class Title extends AppCompatActivity {
+public class Moove extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 

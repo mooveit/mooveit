@@ -47,8 +47,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.Title"
-            android:label="Title"
+            android:name=".login.Moove"
+            android:label="Moove"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
 
@@ -72,6 +72,18 @@
         <activity
             android:name=".login.SearchDevice"
             android:label="SearchDevice"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.LOGIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.GetToKnow"
+            android:label="GetToKnow"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
 
@@ -106,6 +118,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".login.Weight"
+            android:label="Weight"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.LOGIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".rewards.GU"
             android:label="GU"
             android:configChanges="orientation"
@@ -125,6 +149,30 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.QR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.LastStep"
+            android:label="LastStep"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.LOGIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".map.MapView"
+            android:label="MapView"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.LOGIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

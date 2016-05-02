@@ -1,4 +1,4 @@
-    package com.ideyatech.moove;
+package com.ideyatech.moove;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.ideyatech.moove.map.MapView;
 import com.ideyatech.moove.ui.adapters.MerchantAdapter;
 import com.ideyatech.moove.ui.beans.Merchant;
 import com.ideyatech.moove.sql.dao.MerchantDAO;
@@ -59,6 +60,9 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
         Button reward = (Button) findViewById(R.id.reward);
         Button dash = (Button) findViewById(R.id.dash);
 //        Button account = (Button) findViewById()
+        Button now = (Button) findViewById(R.id.merchant);
+
+        now.setBackgroundResource(R.drawable.merchantactive);
 
         reward.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +90,11 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
                 Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM| Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
+    }
+
+    public void map(View view){
+        Intent i = new Intent(getApplicationContext(), MapView.class);
+        startActivity(i);
     }
 
 }

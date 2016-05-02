@@ -67,6 +67,9 @@ public class RewardsActivity extends AppCompatActivity implements
         Button dash = (Button) findViewById(R.id.dash);
         Button merchant = (Button) findViewById(R.id.merchant);
 //        Button account = (Button) findViewById()
+        Button now = (Button) findViewById(R.id.reward);
+
+        now.setBackgroundResource(R.drawable.rewardsactive);
 
         dash.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#27AEF0">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/MyDarkToolbarStyle"
+        android:background="#27AEF0">
+
+        <!-- LOGO -->
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/moove"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"  />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's get to know you first"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/my_awesome_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:id="@+id/textView9" />
+
+    <ImageView
+        android:id="@+id/imgfullname"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:src="@drawable/fullname"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignStart="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:text="FULLNAME"
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="40dp"
+        android:layout_alignBottom="@+id/imgfullname"
+        android:layout_toEndOf="@+id/imgfullname" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Juan"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#FFFFFF"
+        android:id="@+id/editText"
+        android:layout_below="@+id/imgfullname"
+        android:layout_alignStart="@+id/imgfullname" />
+
+    <ImageView
+        android:id="@+id/imgpass"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:src="@drawable/calendar"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/fullname" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BIRTH DATE"
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="40dp"
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/imgpass"
+        android:layout_alignStart="@+id/fullname" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="08"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:backgroundTint="#FFFFFF"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/imgpass"
+        android:layout_alignStart="@+id/imgpass" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:layout_alignTop="@+id/editText2"
+        android:layout_toEndOf="@+id/editText2"
+        android:id="@+id/textView10" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="08"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:backgroundTint="#FFFFFF"
+        android:id="@+id/editText3"
+        android:layout_alignTop="@+id/editText2"
+        android:layout_toEndOf="@+id/editText2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:id="@+id/textView11"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/editText3" />
+
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:hint="2016"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:backgroundTint="#FFFFFF"
+        android:id="@+id/editText4"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_toEndOf="@+id/editText3" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/mybuttonlogin"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp" />
+
+</RelativeLayout>

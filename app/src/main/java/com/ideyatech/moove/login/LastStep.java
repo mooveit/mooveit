@@ -11,14 +11,14 @@ import android.widget.Button;
 import com.ideyatech.moove.R;
 
 /**
- * Created by kendeng on 4/27/2016.
+ * Created by kendeng on 4/28/2016.
  */
-public class Height extends AppCompatActivity {
+public class LastStep extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.height);
+        setContentView(R.layout.laststep);
 
         //*****************************************************************************************
         //*                                     TOOLBAR
@@ -31,16 +31,16 @@ public class Height extends AppCompatActivity {
         //myToolbar.setTitle("Back");
         getSupportActionBar().setTitle("Back");
 
-        Button next = (Button) findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i =  new Intent(getApplicationContext(), Weight.class);
-                startActivity(i);
-
-            }
-        });
+//    Button next = (Button) findViewById(R.id.finish);
+//    next.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//
+//            Intent i =  new Intent(getApplicationContext(), Gender.class);
+//            startActivity(i);
+//
+//        }
+//    });
 
     }
 
@@ -52,4 +52,5 @@ public class Height extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

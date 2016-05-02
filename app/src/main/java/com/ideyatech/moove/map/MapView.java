@@ -1,26 +1,22 @@
-package com.ideyatech.moove.login;
+package com.ideyatech.moove.map;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import com.ideyatech.moove.R;
 
 /**
- * Created by kendeng on 4/27/2016.
+ * Created by kendeng on 4/30/2016.
  */
-public class Height extends AppCompatActivity {
+public class MapView extends AppCompatActivity {
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.height);
-
-        //*****************************************************************************************
+        setContentView(R.layout.map);
+//*****************************************************************************************
         //*                                     TOOLBAR
         //*****************************************************************************************
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
@@ -28,20 +24,7 @@ public class Height extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //myToolbar.setTitle("Back");
         getSupportActionBar().setTitle("Back");
-
-        Button next = (Button) findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i =  new Intent(getApplicationContext(), Weight.class);
-                startActivity(i);
-
-            }
-        });
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -52,4 +35,5 @@ public class Height extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

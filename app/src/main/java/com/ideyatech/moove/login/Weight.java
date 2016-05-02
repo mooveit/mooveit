@@ -11,14 +11,14 @@ import android.widget.Button;
 import com.ideyatech.moove.R;
 
 /**
- * Created by kendeng on 4/27/2016.
+ * Created by kendeng on 4/28/2016.
  */
-public class Height extends AppCompatActivity {
+public class Weight extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.height);
+        setContentView(R.layout.weight);
 
         //*****************************************************************************************
         //*                                     TOOLBAR
@@ -36,13 +36,15 @@ public class Height extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i =  new Intent(getApplicationContext(), Weight.class);
+                Intent i = new Intent(getApplicationContext(), LastStep.class);
                 startActivity(i);
 
             }
         });
 
     }
+
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
@@ -52,4 +54,5 @@ public class Height extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

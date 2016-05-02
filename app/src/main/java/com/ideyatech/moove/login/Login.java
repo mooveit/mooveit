@@ -70,8 +70,8 @@ public class Login extends AppCompatActivity {
 //                    Toast.makeText(getApplicationContext(), "Invalid User Access", Toast.LENGTH_LONG).show();
 //                }
 
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
 
             }
         });

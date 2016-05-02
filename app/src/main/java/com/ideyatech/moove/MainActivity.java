@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.ideyatech.moove.ui.adapters.DashboardAdaptor;
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         //*****************************************************************************************
         Button reward = (Button) findViewById(R.id.reward);
         Button merchant = (Button) findViewById(R.id.merchant);
+        Button now = (Button) findViewById(R.id.dash);
+
+        now.setBackgroundResource(R.drawable.dashboardactive);
 
         reward.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +133,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     }
 
     public void bar(View view){
+        long id = listView.getItemIdAtPosition(0);
+        String showid = String.valueOf(id);
+        Toast.makeText(getApplicationContext(), showid, Toast.LENGTH_LONG).show();
+
         Intent i = new Intent(getApplicationContext(), bar.class);
         startActivity(i);
+
     }
 }
