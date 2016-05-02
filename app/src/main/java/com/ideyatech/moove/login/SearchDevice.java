@@ -36,7 +36,7 @@ public class SearchDevice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i =  new Intent(getApplicationContext(), GetToKnow.class);
+                Intent i =  new Intent(getApplicationContext(), GetToKnowActivity.class);
                 startActivity(i);
 
             }

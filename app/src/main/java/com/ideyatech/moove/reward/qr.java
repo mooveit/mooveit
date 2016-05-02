@@ -1,8 +1,6 @@
-package com.ideyatech.moove.rewards;
+package com.ideyatech.moove.reward;
 
-import android.app.ActionBar;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;

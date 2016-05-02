@@ -4,6 +4,9 @@ import android.os.Parcelable;
 
 public class ActivityData implements Parcelable{
 
+    /**
+     *
+     */
     public static final Creator<ActivityData> CREATOR = new Creator()
     {
         public ActivityData createFromParcel(Parcel paramAnonymousParcel)
@@ -18,11 +21,18 @@ public class ActivityData implements Parcelable{
             return localActivityData;
         }
 
+        /**
+         *
+         * @param paramAnonymousInt
+         * @return
+         */
         public ActivityData[] newArray(int paramAnonymousInt)
         {
             return new ActivityData[paramAnonymousInt];
         }
     };
+
+
     private String activityType;
     private int activityValue;
     private int day;

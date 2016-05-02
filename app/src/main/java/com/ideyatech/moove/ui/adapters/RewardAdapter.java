@@ -68,7 +68,7 @@ public class RewardAdapter extends BaseAdapter  {
         holder.txtExp.setText(rewardItems.getExpiration());
         holder.txtExp.setTypeface(null, Typeface.ITALIC);
         holder.imageView.setImageResource(rewardItems.getImageId());
-        holder.border.setImageResource(R.drawable.fading_line);
+        holder.border.setImageResource(R.drawable.dashboard_fading_line);
 //        holder.arrow.setImageResource(R.drawable.arrow);
 
         return convertView;

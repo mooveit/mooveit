@@ -13,7 +13,7 @@ import com.ideyatech.moove.R;
 /**
  * Created by kendeng on 4/28/2016.
  */
-public class GetToKnow extends AppCompatActivity {
+public class GetToKnowActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -36,7 +36,7 @@ public class GetToKnow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i =  new Intent(getApplicationContext(), Gender.class);
+                Intent i =  new Intent(getApplicationContext(), GenderActivity.class);
                 startActivity(i);
 
             }

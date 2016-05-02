@@ -57,7 +57,7 @@ public class MerchantAdapter extends BaseAdapter {
         holder.txtName.setText(merchantItems.getName());
         holder.txtWebsite.setText(merchantItems.getWebsite());
         holder.imageView.setImageResource(merchantItems.getLogoId());
-        holder.border.setImageResource(R.drawable.fading_line);
+        holder.border.setImageResource(R.drawable.dashboard_fading_line);
 
         return convertView;
     }

@@ -1,4 +1,4 @@
-package com.ideyatech.moove;
+package com.ideyatech.moove.reward;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.ideyatech.moove.R;
+import com.ideyatech.moove.main.MainActivity;
+import com.ideyatech.moove.merchant.MerchantActivity;
 import com.ideyatech.moove.ui.adapters.RewardAdapter;
 import com.ideyatech.moove.ui.beans.Reward;
-import com.ideyatech.moove.rewards.GU;
 import com.ideyatech.moove.sql.dao.RewardDAO;
 
 import java.util.List;
@@ -69,7 +71,7 @@ public class RewardsActivity extends AppCompatActivity implements
 //        Button account = (Button) findViewById()
         Button now = (Button) findViewById(R.id.reward);
 
-        now.setBackgroundResource(R.drawable.rewardsactive);
+        now.setBackgroundResource(R.drawable.buttons_rewardsactive);
 
         dash.setOnClickListener(new View.OnClickListener() {
             @Override

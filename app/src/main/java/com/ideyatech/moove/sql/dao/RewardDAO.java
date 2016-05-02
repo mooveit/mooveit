@@ -91,7 +91,7 @@ public class RewardDAO {
 
         String[] name = new String[] {"GU Roctane Gels", "Adidas Trainer's Shoes", "Quest Bar Protein Bars", "Gold's Gym Membership"};
         String[] merchant = new String[] {"Toby's Sports", "Adidas Philippines", "Healthy Options", "Gold's Gym Philippines"};
-        Integer[] imageId = new Integer[] {R.drawable.gurew, R.drawable.adidasrew, R.drawable.healthyrew, R.drawable.goldrew};
+        Integer[] imageId = new Integer[] {R.drawable.reward_gurew, R.drawable.reward_adidasrewards, R.drawable.reward_healthyrew, R.drawable.reward_goldrew};
         String[] description = new String[] {"Accumulate 20,000 moves to get this.", "Burn 5,000 calories in the next 24hrs to win.", "Sleep at least 8hrs for 5 consecutive days to get this", "Be active for more than 30mins. to get this."};
         String[] expiration = new String[] {"Expires in 3-days", "Expires in 5-days", "Expires in 1-week", "Expires in 1-month"};
 

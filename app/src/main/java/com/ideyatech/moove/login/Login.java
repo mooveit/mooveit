@@ -8,10 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.ideyatech.moove.MainActivity;
+import com.ideyatech.moove.main.MainActivity;
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.sql.SQLiteHelper;
-import com.ideyatech.moove.sql.dao.UserDAO;
 
 /**
  * Created by kendeng on 4/25/2016.

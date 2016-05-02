@@ -1,4 +1,4 @@
-package com.ideyatech.moove.bar;
+package com.ideyatech.moove.barchart;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Created by kendeng on 4/27/2016.
  */
-public class bar extends AppCompatActivity {
+public class BarChartActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;        // Tab
     private ViewPager viewPager;        // ViewPager

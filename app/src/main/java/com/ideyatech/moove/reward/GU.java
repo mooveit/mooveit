@@ -1,4 +1,4 @@
-package com.ideyatech.moove.login;
+package com.ideyatech.moove.reward;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +11,16 @@ import android.widget.Button;
 import com.ideyatech.moove.R;
 
 /**
- * Created by kendeng on 4/27/2016.
+ * Created by kendeng on 4/25/2016.
  */
-public class Gender extends AppCompatActivity {
+public class GU extends AppCompatActivity {
+
+
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gender);
+        setContentView(R.layout.gu);
 
         //*****************************************************************************************
         //*                                     TOOLBAR
@@ -31,17 +33,15 @@ public class Gender extends AppCompatActivity {
         //myToolbar.setTitle("Back");
         getSupportActionBar().setTitle("Back");
 
-        Button next = (Button) findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
+        Button claim = (Button) findViewById(R.id.claim);
+
+        claim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i =  new Intent(getApplicationContext(), Height.class);
+                Intent i = new Intent(getApplicationContext(), qr.class);
                 startActivity(i);
-
             }
         });
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

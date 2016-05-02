@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="160dp"
         android:id="@+id/imageView"
-        android:src="@drawable/gurew"
+        android:src="@drawable/reward_gurew"
         android:layout_gravity="center_horizontal"
         android:foregroundGravity="center"/>
 
@@ -40,7 +40,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/reward"
+        android:src="@drawable/reward_medal"
         android:layout_below="@+id/textView3"
         android:layout_alignParentStart="true"
         android:paddingLeft="30dp"
@@ -109,7 +109,7 @@
         android:layout_marginRight="40dp"
         android:text="Claim this reward"
         android:textColor="#FFFFFF"
-        android:background="@drawable/mybuttonlogin"
+        android:background="@drawable/button_login"
         android:layout_alignBottom="@+id/textView7"
         android:layout_centerHorizontal="true"/>
 

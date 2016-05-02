@@ -69,7 +69,7 @@ public class MerchantDAO {
 //        values.put(MerchantsSQL.COLUMN_MAPSID, merchant.getMapsId());
 
         String[] name = new String[] {"Toby's Sports", "Adidas Philippines", "Healthy Options", "Gold's Gym Philippines"};
-        Integer[] logoId = new Integer[] {R.drawable.tobylogo, R.drawable.adidaslogo, R.drawable.healthylogo, R.drawable.goldlogo};
+        Integer[] logoId = new Integer[] {R.drawable.merchant_tobylogo, R.drawable.merchant_adidaslogo, R.drawable.merchant_healthylogo, R.drawable.merchant_goldlogo};
         String[] website = new String[] {"http://www.tobys.com", "http://shop.adidas.com.ph", "http://www.healthyoptions.com.ph", "http://www.goldsgym.com.ph"};
 
         for (int i = 0; i < 4; i++) {
@@ -90,7 +90,7 @@ public class MerchantDAO {
     public List getData(Merchant data){
 
         String[] name = new String[] {"Toby's Sports", "Adidas Philippines", "Healthy Options", "Gold's Gym Philippines"};
-        Integer[] logoId = new Integer[] {R.drawable.tobylogo, R.drawable.adidaslogo, R.drawable.healthylogo, R.drawable.goldlogo};
+        Integer[] logoId = new Integer[] {R.drawable.merchant_tobylogo, R.drawable.merchant_adidaslogo, R.drawable.merchant_healthylogo, R.drawable.merchant_goldlogo};
         String[] website = new String[] {"http://www.tobys.com", "http://shop.adidas.com.ph", "http://www.healthyoptions.com.ph", "http://www.goldsgym.com.ph"};
 
         List<com.ideyatech.moove.ui.beans.Merchant> lmer = new ArrayList<com.ideyatech.moove.ui.beans.Merchant>();

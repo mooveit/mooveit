@@ -13,7 +13,7 @@ import com.ideyatech.moove.R;
 /**
  * Created by kendeng on 4/27/2016.
  */
-public class Height extends AppCompatActivity {
+public class HeightActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 

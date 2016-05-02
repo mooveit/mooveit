@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/moove"
+            android:src="@drawable/toolbar_moove"
             android:layout_centerVertical="true"
             android:layout_centerInParent="true"  />
     </android.support.v7.widget.Toolbar>
@@ -46,7 +46,7 @@
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/dashboardnotactive"/>
+        android:background="@drawable/buttons_dashboardnotactive"/>
 
     <Button
         android:id="@+id/reward"
@@ -58,7 +58,7 @@
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/dash"
-        android:background="@drawable/rewardsnotactive"/>
+        android:background="@drawable/buttons_rewardsnotactive"/>
 
     <Button
         android:id="@+id/merchant"
@@ -68,7 +68,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="9dp"
-        android:background="@drawable/merchantnotactive"
+        android:background="@drawable/buttons_merchantnotactive"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/reward" />
 
@@ -82,7 +82,7 @@
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/merchant"
-        android:background="@drawable/accountnotactive" />
+        android:background="@drawable/buttons_accountnotactive" />
 
     <ImageView
         android:id="@+id/border"

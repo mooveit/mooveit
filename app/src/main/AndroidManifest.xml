@@ -12,18 +12,18 @@
         />
 
     <application
-        android:icon="@drawable/moove"
+        android:icon="@drawable/toolbar_moove"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/title_main_activity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
 
 
         </activity>
-        <activity android:name=".RewardsActivity"
+        <activity android:name=".reward.RewardsActivity"
             android:label="Rewards"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MerchantActivity"
+            android:name=".merchant.MerchantActivity"
             android:label="Merchant"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -82,7 +82,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.GetToKnow"
+            android:name=".login.GetToKnowActivity"
             android:label="GetToKnow"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -94,7 +94,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.Gender"
+            android:name=".login.GenderActivity"
             android:label="Gender"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -106,7 +106,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.Height"
+            android:name=".login.HeightActivity"
             android:label="Height"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -130,7 +130,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".rewards.GU"
+            android:name=".reward.GU"
             android:label="GU"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -142,7 +142,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".rewards.qr"
+            android:name=".reward.qr"
             android:label="QR"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -166,7 +166,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".map.MapView"
+            android:name=".merchant.MapView"
             android:label="MapView"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -178,7 +178,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".bar.bar"
+            android:name=".barchart.BarChartActivity"
             android:label="BarChart"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
