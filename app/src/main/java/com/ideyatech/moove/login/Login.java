@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.ideyatech.moove.main.MainActivity;
 import com.ideyatech.moove.R;
@@ -20,6 +22,7 @@ public class Login extends AppCompatActivity {
     private static boolean access;
     private static EditText user;
     private static EditText pass;
+    private static Button   log;
     public static SQLiteHelper dBHelper;
     public boolean validUser;
     /*
@@ -42,14 +45,17 @@ public class Login extends AppCompatActivity {
 
         user = (EditText) findViewById(R.id.editText);
         pass = (EditText) findViewById(R.id.editText2);
-        Button log = (Button) findViewById(R.id.butt);
+        log = (Button) findViewById(R.id.butt);
 
-        access = false;
+        Intent i = getIntent();
+        Bundle extras = i.getExtras();
 
-        if(user.getText().toString().equals("user"))
-            if(pass.getText().toString().equals("password"))
-                access = true;
-
+        if(extras != null){
+            if (extras.containsKey("usern") && extras.containsKey("passn")){
+                user.setText(getIntent().getExtras().getString("usern"));
+                pass.setText(extras.getString("passn"));
+            }
+        }
 
         //*****************************************************************
         //                          VALIDATION
@@ -57,6 +63,8 @@ public class Login extends AppCompatActivity {
         String fullname = dBHelper.validateUsernameAndPassword(user.getText().toString(), pass.getText().toString());
         validUser = fullname.equals("EMPTY")? false: true;
         Log.d("Login", "FULLNAME OF USER " +  fullname);
+
+
 
         log.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +76,9 @@ public class Login extends AppCompatActivity {
 //                else {
 //                    Toast.makeText(getApplicationContext(), "Invalid User Access", Toast.LENGTH_LONG).show();
 //                }
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
 
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
 
             }
         });

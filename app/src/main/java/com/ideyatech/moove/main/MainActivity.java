@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.barchart.BarChartActivity;
+import com.ideyatech.moove.login.Moove;
 import com.ideyatech.moove.merchant.MerchantActivity;
 import com.ideyatech.moove.reward.RewardsActivity;
 import com.ideyatech.moove.ui.adapters.DashboardAdaptor;
@@ -120,6 +122,18 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 //        if(Integer.parseInt(sleep.getText().toString()) > 8)
 //            sleep.setTextColor(Color.parseColor("#e39493"));
 
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
+        ImageView home = (ImageView) findViewById(R.id.icon);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Moove.class);
+                startActivity(i);
+            }
+        });
+
     }
 
 
@@ -144,9 +158,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     }
 
     public void bar(View view){
-        long id = listView.getItemIdAtPosition(0);
-        String showid = String.valueOf(id);
-        Toast.makeText(getApplicationContext(), showid, Toast.LENGTH_LONG).show();
 
         Intent i = new Intent(getApplicationContext(), BarChartActivity.class);
         startActivity(i);

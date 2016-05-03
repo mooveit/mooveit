@@ -49,18 +49,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_below="@+id/textView8"
-        android:layout_toLeftOf="@id/button"
         android:src="@drawable/gender_border"
-        android:layout_centerVertical="true"
-        android:layout_centerInParent="true"  />
+        android:layout_above="@+id/next"
+        android:layout_toStartOf="@+id/button2"
+        android:layout_below="@+id/textView8" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/gender_female"
         android:layout_alignTop="@+id/button"
-        android:layout_alignEnd="@+id/textView8" />
+        android:layout_alignEnd="@+id/textView8"
+        android:id="@+id/button2" />
 
     <Button
         android:id="@+id/next"

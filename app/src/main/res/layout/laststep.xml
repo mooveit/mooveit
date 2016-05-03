@@ -52,6 +52,7 @@
         android:paddingTop="100dp"
         android:text="EMAIL"
         android:textSize="15dp"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:layout_marginRight="40dp"
         android:layout_alignBottom="@+id/imguser"
@@ -63,6 +64,7 @@
         android:hint="juan@gmail.com"
         android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:backgroundTint="#FFFFFF"
@@ -85,6 +87,7 @@
         android:layout_height="wrap_content"
         android:text="PASSWORD"
         android:textSize="15dp"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:layout_marginRight="40dp"
         android:layout_alignBottom="@+id/imgpass"
@@ -105,17 +108,18 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/editText2" />
 
-    <CheckedTextView
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="I agree with the Terms and Conditions"
         android:textColor="#FFFFFF"
         android:background="#27AEF0"
         android:layout_gravity="center"
+        android:buttonTint="#FFFFFF"
         android:backgroundTint="#27AEF0"
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView2" />
+        android:id="@+id/check" />
 
     <Button
         android:id="@+id/finish"

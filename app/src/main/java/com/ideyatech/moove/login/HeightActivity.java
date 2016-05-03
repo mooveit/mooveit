@@ -7,7 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.github.channguyen.rsv.RangeSliderView;
 import com.ideyatech.moove.R;
 
 /**
@@ -36,9 +38,18 @@ public class HeightActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i =  new Intent(getApplicationContext(), Weight.class);
+                Intent i = new Intent(getApplicationContext(), WeightActivity.class);
                 startActivity(i);
 
+            }
+        });
+
+        final RangeSliderView height = (RangeSliderView) findViewById(R.id.rsv_small);
+        final TextView heighttext = (TextView) findViewById(R.id.heighttext);
+        height.setOnSlideListener(new RangeSliderView.OnSlideListener() {
+            @Override
+            public void onSlide(int index) {
+                heighttext.setText(Integer.toString(index) + "cm");
             }
         });
 

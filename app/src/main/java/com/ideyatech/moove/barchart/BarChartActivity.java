@@ -1,5 +1,6 @@
 package com.ideyatech.moove.barchart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.ideyatech.moove.R;
+import com.ideyatech.moove.login.Moove;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +49,19 @@ public class BarChartActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
+        ImageView home = (ImageView) findViewById(R.id.icon);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Moove.class);
+                startActivity(i);
+            }
+        });
+
     }
     /**
      *

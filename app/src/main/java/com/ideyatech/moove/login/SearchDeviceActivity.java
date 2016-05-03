@@ -11,14 +11,14 @@ import android.widget.Button;
 import com.ideyatech.moove.R;
 
 /**
- * Created by kendeng on 4/28/2016.
+ * Created by kendeng on 4/27/2016.
  */
-public class Weight extends AppCompatActivity {
+public class SearchDeviceActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.weight);
+        setContentView(R.layout.searchdevice);
 
         //*****************************************************************************************
         //*                                     TOOLBAR
@@ -36,15 +36,13 @@ public class Weight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), LastStep.class);
+                Intent i =  new Intent(getApplicationContext(), GetToKnowActivity.class);
                 startActivity(i);
 
             }
         });
 
     }
-
-
 
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub

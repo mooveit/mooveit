@@ -22,8 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/claimed"
-        android:layout_below="@+id/mechanics"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/mechanics"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/claim" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -122,6 +124,55 @@
         android:textColor="#FFFFFF"
         android:background="@drawable/button_login"
         android:layout_alignBottom="@+id/textView7"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/dash"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="9dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/claim"
+        android:background="@drawable/buttons_dashboardnotactive"/>
+
+    <Button
+        android:id="@+id/rewardbutt"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="9dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/dash"
+        android:background="@drawable/buttons_rewardsnotactive"/>
+
+    <Button
+        android:id="@+id/merchantbutt"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/buttons_merchantnotactive"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/rewardbutt" />
+
+    <Button
+        android:id="@+id/account"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="9dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/merchantbutt"
+        android:background="@drawable/buttons_accountnotactive" />
 
 </RelativeLayout>

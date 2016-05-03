@@ -70,7 +70,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.SearchDevice"
+            android:name=".login.SearchDeviceActivity"
             android:label="SearchDevice"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -118,7 +118,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.Weight"
+            android:name=".login.WeightActivity"
             android:label="Weight"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -154,7 +154,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.LastStep"
+            android:name=".login.LastStepActivity"
             android:label="LastStep"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >

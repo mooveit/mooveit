@@ -7,11 +7,13 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.ideyatech.moove.R;
+import com.ideyatech.moove.login.Moove;
 import com.ideyatech.moove.main.MainActivity;
 import com.ideyatech.moove.reward.RewardsActivity;
 import com.ideyatech.moove.ui.adapters.MerchantAdapter;
@@ -44,13 +46,6 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         MerchantDAO mds = new MerchantDAO(null);
-//        mds.insertData(null);
-
-//        merchantItems = new ArrayList<Merchant>();
-//        for (int i = 0; i < name.length ; i++){
-//            Merchant item = new Merchant(logoId[i], name[i], website[i]);
-//            merchantItems.add(item);
-//        }
 
         listView = (ListView) findViewById(R.id.merchant_list);
         listView.setDivider(null);
@@ -58,7 +53,9 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 
-        //MINE
+        //*****************************************************************************************
+        //*                                     BUTTONS
+        //*****************************************************************************************
         Button reward = (Button) findViewById(R.id.reward);
         Button dash = (Button) findViewById(R.id.dash);
 //        Button account = (Button) findViewById()
@@ -79,6 +76,18 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
             public void onClick(View v) {
 
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
+        ImageView home = (ImageView) findViewById(R.id.icon);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Moove.class);
                 startActivity(i);
             }
         });

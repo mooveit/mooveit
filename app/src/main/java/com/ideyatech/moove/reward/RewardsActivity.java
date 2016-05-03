@@ -8,9 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.ideyatech.moove.R;
+import com.ideyatech.moove.login.Moove;
 import com.ideyatech.moove.main.MainActivity;
 import com.ideyatech.moove.merchant.MerchantActivity;
 import com.ideyatech.moove.ui.adapters.RewardAdapter;
@@ -51,13 +53,6 @@ public class RewardsActivity extends AppCompatActivity implements
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         RewardDAO rds = new RewardDAO(null);
-//        rds.getData(null);
-
-//        rewardItems = new ArrayList<Reward>();
-//        for (int i = 0; i < name.length ; i++){
-//            Reward item = new Reward(imageId[i], name[i], merchant[i], description[i], expiration[i]);
-//            rewardItems.add(item);
-//        }
 
         listView = (ListView) findViewById(R.id.reward_list);
         listView.setDivider(null);
@@ -65,7 +60,9 @@ public class RewardsActivity extends AppCompatActivity implements
         RewardAdapter adapter = new RewardAdapter(this, rds.getData(null));
         listView.setAdapter(adapter);
 
-        //MINE
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
         Button dash = (Button) findViewById(R.id.dash);
         Button merchant = (Button) findViewById(R.id.merchant);
 //        Button account = (Button) findViewById()
@@ -86,6 +83,18 @@ public class RewardsActivity extends AppCompatActivity implements
             public void onClick(View v) {
 
                 Intent i = new Intent(getApplicationContext(), MerchantActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
+        ImageView home = (ImageView) findViewById(R.id.icon);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Moove.class);
                 startActivity(i);
             }
         });
