@@ -31,6 +31,9 @@ public class SearchDeviceActivity extends AppCompatActivity {
         //myToolbar.setTitle("Back");
         getSupportActionBar().setTitle("Back");
 
+        PreloaderSearchDevice pGif = (PreloaderSearchDevice) findViewById(R.id.viewGif);
+        pGif.setImageResource(R.drawable.login_preloader);
+
         Button next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -30,19 +30,23 @@ import com.ideyatech.moove.ui.beans.DashboardRowItem;
 public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
     public static final String[] values = new String[] { "19,500",
-            "20,000", "12", "8"};
+            "20,000", "12", "8", "75"};
 
     public static final String[] units = new String[] { "moves",
-            "calories burned", "hours", " minutes active"};
+            "calories burned", "hours", " minutes active", "kilos"};
     
     public static final String[] rewardComment = new String[] {
             "You need 500 moves to get reward",
             "Burn 30,000 calories to get reward",
             "You've slept way too much!",
-            "Be active for 23mins. to get a reward"};
+            "Be active for 23mins. to get a reward",
+            "You still need to lose 3 kilos."};
 
     public static final Integer[] images = { R.drawable.dashboard_step,
-            R.drawable.dashboard_fire, R.drawable.dashboard_sleep, R.drawable.dashboard_active};
+            R.drawable.dashboard_fire, R.drawable.dashboard_sleep, R.drawable.dashboard_active, R.drawable.dashboard_weight};
+
+    public static final Integer[] medal = { R.drawable.dashboard_star,
+            R.drawable.dashboard_star, R.drawable.dashboard_star, R.drawable.dashboard_star, R.drawable.dashboard_star};
 
     ListView listView;
     List<DashboardRowItem> dashboardRowItems;
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         dashboardRowItems = new ArrayList<DashboardRowItem>();
         for (int i = 0; i < values.length; i++) {
-            DashboardRowItem item = new DashboardRowItem(images[i], values[i], units[i], rewardComment[i]);
+            DashboardRowItem item = new DashboardRowItem(images[i], values[i], units[i], medal[i], rewardComment[i]);
             dashboardRowItems.add(item);
         }
 
@@ -157,6 +161,10 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     }
 
+    /**
+     *
+     * @param view
+     */
     public void bar(View view){
 
         Intent i = new Intent(getApplicationContext(), BarChartActivity.class);
