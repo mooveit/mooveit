@@ -39,6 +39,7 @@ public class DashboardAdaptor extends BaseAdapter {
         ImageView imageView;
         TextView txtValue;
         TextView txtUnits;
+        ImageView medalView;
         TextView txtRewardComment;
         ImageView border;
     }
@@ -61,6 +62,7 @@ public class DashboardAdaptor extends BaseAdapter {
             holder.txtRewardComment = (TextView) convertView.findViewById(R.id.desc);
             holder.txtValue = (TextView) convertView.findViewById(R.id.title);
             holder.txtUnits = (TextView) convertView.findViewById(R.id.units);
+            holder.medalView = (ImageView) convertView.findViewById(R.id.star);
             holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
             holder.border = (ImageView) convertView.findViewById(R.id.border);
             convertView.setTag(holder);
@@ -74,6 +76,7 @@ public class DashboardAdaptor extends BaseAdapter {
         holder.txtRewardComment.setText(dashboardRowItem.getRewardComment());
         holder.txtValue.setText(dashboardRowItem.getValue());
         holder.txtUnits.setText(dashboardRowItem.getUnit());
+        holder.medalView.setImageResource(dashboardRowItem.getMedalId());
         holder.txtRewardComment.setTypeface(null, Typeface.ITALIC);
         holder.imageView.setImageResource(dashboardRowItem.getImageId());
         holder.border.setImageResource(R.drawable.dashboard_fading_line);

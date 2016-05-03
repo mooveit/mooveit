@@ -42,7 +42,6 @@ public class DailyDashboardCalendarFragment extends Fragment implements IDashboa
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
     }
 
     /**

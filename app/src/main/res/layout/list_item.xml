@@ -37,14 +37,29 @@
         android:textColor="#2f4f4f"
         android:textSize="21dp" />
 
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="14dp"
+        android:maxHeight="14dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="4dp"/>
+
     <TextView
         android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="7mm"
         android:layout_below="@+id/title"
-        android:layout_toRightOf="@+id/icon"
+        android:layout_toRightOf="@+id/star"
         android:textColor="#FFB000"
         android:textSize="14dp" />
+
 
     <ImageView
         android:id="@+id/border"

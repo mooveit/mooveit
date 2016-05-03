@@ -14,9 +14,11 @@ public class MapView extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
-//*****************************************************************************************
+
+        //*****************************************************************************************
         //*                                     TOOLBAR
         //*****************************************************************************************
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
