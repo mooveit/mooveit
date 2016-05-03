@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/reward_border"
         android:backgroundTint="#FFFFFF"
-        android:hint="177cm"
+        android:hint="110cm"
         android:textColor="#FFFFFF"
         android:textSize="50dp"
         android:textColorHint="#FFFFFF"
@@ -54,23 +54,25 @@
     <com.github.channguyen.rsv.RangeSliderView
         android:id="@+id/rsv_small"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="70dp"
         android:rotation="270"
+        android:layout_marginLeft="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         rsv:filledColor="#FFFFFF"
         rsv:rangeCount="221"
-        android:layout_above="@+id/heighttext"
-        android:layout_toEndOf="@+id/heighttext"
+        android:layout_alignBottom="@+id/heighttext"
         android:layout_alignStart="@+id/textView4" />
 
     <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:src="@drawable/height"-->
-        <!--android:layout_alignEnd="@+id/next"-->
-        <!--android:layout_above="@+id/next"-->
-        <!--android:layout_marginLeft="40dp"-->
-        <!--android:layout_alignTop="@+id/textView4"-->
-        <!--android:layout_toEndOf="@+id/heighttext" />-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@drawable/height"-->
+    <!--android:layout_alignEnd="@+id/next"-->
+    <!--android:layout_above="@+id/next"-->
+    <!--android:layout_marginLeft="40dp"-->
+    <!--android:layout_alignTop="@+id/textView4"-->
+    <!--android:layout_toEndOf="@+id/heighttext" />-->
 
     <Button
         android:id="@+id/next"

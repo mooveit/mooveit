@@ -20,8 +20,6 @@ import com.ideyatech.moove.merchant.MerchantActivity;
  */
 public class GU extends AppCompatActivity {
 
-    int i = 0;
-
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -89,7 +87,6 @@ public class GU extends AppCompatActivity {
         claim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = 1;
                 Intent i = new Intent(getApplicationContext(), qr.class);
                 startActivity(i);
             }

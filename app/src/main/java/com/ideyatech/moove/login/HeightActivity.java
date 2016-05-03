@@ -46,10 +46,12 @@ public class HeightActivity extends AppCompatActivity {
 
         final RangeSliderView height = (RangeSliderView) findViewById(R.id.rsv_small);
         final TextView heighttext = (TextView) findViewById(R.id.heighttext);
+        height.setInitialIndex(110);
         height.setOnSlideListener(new RangeSliderView.OnSlideListener() {
             @Override
             public void onSlide(int index) {
                 heighttext.setText(Integer.toString(index) + "cm");
+
             }
         });
 

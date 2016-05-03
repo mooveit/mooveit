@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ideyatech.moove.main.MainActivity;
@@ -80,6 +81,18 @@ public class Login extends AppCompatActivity {
             startActivity(i);
 
 
+            }
+        });
+
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
+        ImageView home = (ImageView) findViewById(R.id.icon);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Moove.class);
+                startActivity(i);
             }
         });
 

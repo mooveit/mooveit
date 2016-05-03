@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
-        android:hint="100kg"
+        android:hint="63kg"
         android:textColor="#FFFFFF"
         android:textSize="50dp"
         android:textColorHint="#FFFFFF"

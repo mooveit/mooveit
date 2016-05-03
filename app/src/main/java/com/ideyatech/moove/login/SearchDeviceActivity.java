@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.ideyatech.moove.R;
 
@@ -45,6 +46,17 @@ public class SearchDeviceActivity extends AppCompatActivity {
             }
         });
 
+        //*****************************************************************************************
+        //*                                     BACK TO TITLE
+        //*****************************************************************************************
+        ImageView home = (ImageView) findViewById(R.id.icon);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Moove.class);
+                startActivity(i);
+            }
+        });
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
