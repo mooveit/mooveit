@@ -113,8 +113,9 @@ public class GU extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), qr.class);
                 claimed_1 = true;
-                finish();
+
                 startActivity(i);
+                finish();
             }
         });
 

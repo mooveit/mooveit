@@ -1,7 +1,11 @@
 package com.ideyatech.moove.login;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -43,6 +47,18 @@ public class LastStepActivity extends AppCompatActivity {
         user = (EditText) findViewById(R.id.editText);
         pass = (EditText) findViewById(R.id.editText2);
         agree = (CheckBox) findViewById(R.id.check);
+
+        final Drawable originalDrawablePassword = pass.getBackground();
+        final Drawable wrappedDrawablePassword = DrawableCompat.wrap(originalDrawablePassword);
+        DrawableCompat.setTintList(wrappedDrawablePassword, ColorStateList.valueOf(Color.WHITE));
+        pass.setBackground(wrappedDrawablePassword);
+
+        final Drawable originalDrawableUser = user.getBackground();
+        final Drawable wrappedDrawableUser = DrawableCompat.wrap(originalDrawableUser);
+        DrawableCompat.setTintList(wrappedDrawableUser, ColorStateList.valueOf(Color.WHITE));
+        user.setBackground(wrappedDrawableUser);
+
+
 
     Button next = (Button) findViewById(R.id.finish);
     next.setOnClickListener(new View.OnClickListener() {

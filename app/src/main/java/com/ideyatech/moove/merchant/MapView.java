@@ -155,10 +155,10 @@ public class MapView extends AppCompatActivity implements OnMapReadyCallback,
         double[] lat = {14.585124, 14.581848, 14.591471, 14.552077};
         double[] lng = {121.057355, 121.055508, 121.059686, 121.025945};
 
-        LatLng mega = new LatLng(14.585124, 121.057355);
-        LatLng shang = new LatLng(14.581848, 121.055508);
-        LatLng galle = new LatLng(14.591471, 121.059686);
-        LatLng gb3 = new LatLng(14.552077, 121.025945);
+//        LatLng mega = new LatLng(14.585124, 121.057355);
+//        LatLng shang = new LatLng(14.581848, 121.055508);
+//        LatLng galle = new LatLng(14.591471, 121.059686);
+//        LatLng gb3 = new LatLng(14.552077, 121.025945);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -168,7 +168,7 @@ public class MapView extends AppCompatActivity implements OnMapReadyCallback,
         }
 
         for (int i = 0 ; i < 4 ; i++){
-            mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[0])));
+            mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[i])));
         }
 
 //        mMap.addMarker(new MarkerOptions().position(mega).title("Toby's Sports Megamall"));

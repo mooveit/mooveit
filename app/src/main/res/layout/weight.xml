@@ -59,10 +59,10 @@
         android:layout_marginRight="15dp"
         rsv:filledColor="#FFFFFF"
         rsv:rangeCount="126"
-        android:paddingLeft="10dp"
+        android:paddingLeft="30dp"
         android:paddingRight="10dp"
         android:layout_below="@+id/weighttext"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/next"

@@ -1,12 +1,17 @@
 package com.ideyatech.moove.login;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.ideyatech.moove.R;
@@ -42,6 +47,19 @@ public class GetToKnowActivity extends AppCompatActivity {
 
             }
         });
+
+        EditText email = (EditText) findViewById(R.id.editText);
+        EditText password = (EditText) findViewById(R.id.editText2);
+
+        final Drawable originalDrawablePassword = password.getBackground();
+        final Drawable wrappedDrawablePassword = DrawableCompat.wrap(originalDrawablePassword);
+        DrawableCompat.setTintList(wrappedDrawablePassword, ColorStateList.valueOf(Color.WHITE));
+        password.setBackground(wrappedDrawablePassword);
+
+        final Drawable originalDrawableUser = email.getBackground();
+        final Drawable wrappedDrawableUser = DrawableCompat.wrap(originalDrawableUser);
+        DrawableCompat.setTintList(wrappedDrawableUser, ColorStateList.valueOf(Color.WHITE));
+        email.setBackground(wrappedDrawableUser);
 
         //*****************************************************************************************
         //*                                     BACK TO TITLE

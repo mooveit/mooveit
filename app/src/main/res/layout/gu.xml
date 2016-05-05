@@ -25,7 +25,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/mechanics"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/claim" />
+        android:layout_alignBottom="@+id/textView7" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -118,11 +118,13 @@
         android:id="@+id/claim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:text="Claim this reward"
         android:textColor="#FFFFFF"
         android:background="@drawable/button_login"
+        android:layout_above="@id/dash"
         android:layout_alignBottom="@+id/textView7"
         android:layout_centerHorizontal="true" />
 
@@ -173,7 +175,7 @@
         android:layout_marginRight="18dp"
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/merchant"
+        android:layout_toEndOf="@+id/merchantbutt"
         android:background="@drawable/buttons_accountnotactive" />
 
 </RelativeLayout>

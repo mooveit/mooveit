@@ -11,11 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.login.Moove;
+import com.ideyatech.moove.merchant.MerchantActivity;
+import com.ideyatech.moove.reward.RewardsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +63,32 @@ public class BarChartActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        //*****************************************************************************************
+        //*                                      BUTTONS
+        //*****************************************************************************************
+        Button reward = (Button) findViewById(R.id.reward);
+        Button merchant = (Button) findViewById(R.id.merchant);
+        Button now = (Button) findViewById(R.id.dash);
+
+        now.setBackgroundResource(R.drawable.buttons_dashboardactive);
+
+        reward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), RewardsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        merchant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), MerchantActivity.class);
+                startActivity(i);
+            }
+        });
 
         //*****************************************************************************************
         //*                                     BACK TO TITLE

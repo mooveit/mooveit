@@ -1,7 +1,11 @@
 package com.ideyatech.moove.login;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -44,9 +48,23 @@ public class Login extends AppCompatActivity {
         dBHelper.getWritableDatabase();
 
 
+        //*****************************************************************************************
+        //*                           EDITTEXT ASSIGNING AND FORMATTING
+        //*****************************************************************************************
+
         user = (EditText) findViewById(R.id.editText);
         pass = (EditText) findViewById(R.id.editText2);
         log = (Button) findViewById(R.id.butt);
+
+        final Drawable originalDrawablePassword = pass.getBackground();
+        final Drawable wrappedDrawablePassword = DrawableCompat.wrap(originalDrawablePassword);
+        DrawableCompat.setTintList(wrappedDrawablePassword, ColorStateList.valueOf(Color.WHITE));
+        pass.setBackground(wrappedDrawablePassword);
+
+        final Drawable originalDrawableUser = user.getBackground();
+        final Drawable wrappedDrawableUser = DrawableCompat.wrap(originalDrawableUser);
+        DrawableCompat.setTintList(wrappedDrawableUser, ColorStateList.valueOf(Color.WHITE));
+        user.setBackground(wrappedDrawableUser);
 
         Intent i = getIntent();
         Bundle extras = i.getExtras();
