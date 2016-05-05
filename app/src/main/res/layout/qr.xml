@@ -49,7 +49,7 @@
         android:background="@drawable/buttons_dashboardnotactive"/>
 
     <Button
-        android:id="@+id/reward"
+        android:id="@+id/rewardbutt"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginTop="9dp"
@@ -61,7 +61,7 @@
         android:background="@drawable/buttons_rewardsnotactive"/>
 
     <Button
-        android:id="@+id/merchant"
+        android:id="@+id/merchantbutt"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginTop="9dp"
@@ -70,7 +70,7 @@
         android:layout_marginBottom="9dp"
         android:background="@drawable/buttons_merchantnotactive"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/reward" />
+        android:layout_toEndOf="@+id/rewardbutt" />
 
     <Button
         android:id="@+id/account"
@@ -81,7 +81,7 @@
         android:layout_marginRight="18dp"
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/merchant"
+        android:layout_toEndOf="@+id/merchantbutt"
         android:background="@drawable/buttons_accountnotactive" />
 
     <!--
