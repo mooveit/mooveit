@@ -21,6 +21,11 @@ import com.ideyatech.moove.merchant.MerchantActivity;
  */
 public class GU extends AppCompatActivity {
 
+    public static boolean claimed_1 = false;
+    public static boolean claimed_2 = false;
+    public static boolean claimed_3 = false;
+    public static boolean claimed_4 = false;
+
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -47,7 +52,7 @@ public class GU extends AppCompatActivity {
         getSupportActionBar().setTitle("Back");
 
         Button claim = (Button) findViewById(R.id.claim);
-        ImageView claimed = (ImageView) findViewById(R.id.claimed);
+        final ImageView claimed = (ImageView) findViewById(R.id.claimed);
 
         //MINE
         Button dash = (Button) findViewById(R.id.dash);
@@ -90,14 +95,25 @@ public class GU extends AppCompatActivity {
 //            claimed.setVisibility(View.VISIBLE);
 //        }
 //        else {
+//            claim.setVisibility(View.VISIBLE);
+//            claimed.setVisibility(View.INVISIBLE);
+//        }
+
+        if(!claimed_1){
             claim.setVisibility(View.VISIBLE);
             claimed.setVisibility(View.INVISIBLE);
-//        }
+        }
+        else{
+            claim.setVisibility(View.INVISIBLE);
+            claimed.setVisibility(View.VISIBLE);
+        }
 
         claim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), qr.class);
+                claimed_1 = true;
+                finish();
                 startActivity(i);
             }
         });
