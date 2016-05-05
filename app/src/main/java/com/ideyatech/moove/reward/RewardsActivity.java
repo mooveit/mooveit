@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.login.Moove;
@@ -24,8 +25,7 @@ import java.util.List;
 /**
  * Created by kendeng on 4/22/2016.
  */
-public class RewardsActivity extends AppCompatActivity implements
-        AdapterView.OnItemClickListener {
+public class RewardsActivity extends AppCompatActivity{
 
 //    public static final String[] name = new String[] {"GU Roctane Gels", "Adidas Trainer's Shoes", "Quest Bar Protein Bars", "Gold's Gym Membership"};
 //    public static final String[] merchant = new String[] {"Toby's Sports", "Adidas Philippines", "Healthy Options", "Gold's Gym Philippines"};
@@ -101,11 +101,6 @@ public class RewardsActivity extends AppCompatActivity implements
 
     }
 
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-                            long id) {
-
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
@@ -117,7 +112,13 @@ public class RewardsActivity extends AppCompatActivity implements
     }
 
     public void claimreward(View view){
+        TextView ty = (TextView) findViewById(R.id.name);
         Intent i = new Intent(getApplicationContext(), GU.class);
+        i.putExtra("try", ty.getText().toString());
         startActivity(i);
+    }
+
+    public void onListItemClick(ListView l, View v, int position, long id){
+
     }
 }

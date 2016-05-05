@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.login.Moove;
@@ -32,6 +33,16 @@ public class BarChartActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bar);
+
+        Intent i = getIntent();
+        Bundle extras = i.getExtras();
+
+        if(extras != null){
+            if (extras.containsKey("bar")){
+                Toast.makeText(getApplicationContext(), extras.getString("bar"), Toast.LENGTH_LONG).show();
+            }
+        }
+
 
         //*****************************************************************************************
         //*                                     TOOLBAR

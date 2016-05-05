@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         //*******************************************************************
         //                      BACKGROUND TO WHITE
         //*******************************************************************
-        View someView = findViewById(R.id.list);
-        View root = someView.getRootView();
+//        View someView = findViewById(R.id.list);
+//        View root = someView.getRootView();
         // Set the color to white
         //root.setBackgroundColor(getResources().getColor(android.R.color.white));
 
@@ -166,8 +166,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
      * @param view
      */
     public void bar(View view){
-
         Intent i = new Intent(getApplicationContext(), BarChartActivity.class);
+
         startActivity(i);
 
     }

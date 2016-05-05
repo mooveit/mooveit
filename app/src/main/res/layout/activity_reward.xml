@@ -38,13 +38,15 @@
     <!--android:gravity="center_vertical|center_horizontal"-->
     <!--android:shadowColor="@color/accent_material_dark" />-->
 
+    <!-- DASHBOARD GRAY BUTTONS -->
+
     <Button
         android:id="@+id/dash"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginTop="9dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="18dp"
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
@@ -56,7 +58,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="9dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="18dp"
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/dash"
@@ -68,7 +70,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="9dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="18dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/buttons_merchantnotactive"
         android:layout_alignParentBottom="true"
@@ -80,7 +82,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="9dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="18dp"
         android:layout_marginBottom="9dp"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/merchant"
@@ -94,12 +96,22 @@
         android:layout_above="@id/dash"
         android:layout_alignParentStart="true" />
 
+    <!--<fragment-->
+        <!--android:name="com.ideyatech.moove.reward.RewardFragment"-->
+        <!--android:id="@+id/fragreward"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/my_awesome_toolbar"-->
+        <!--android:layout_above="@id/dash"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--/>-->
+
     <ImageView
         android:id="@+id/border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_below="@id/list"
+        android:layout_below="@id/reward_list"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
 

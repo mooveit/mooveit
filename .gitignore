@@ -1,9 +1,14 @@
 .gradle
 /local.properties
 /.idea/workspace.xml
+<<<<<<< Updated upstream
 /.idea/grade.xml
 /.idea/misc.iml
 /app/app.iml
+=======
+/app/app.iml
+/.idea/misc.xml
+>>>>>>> Stashed changes
 /.idea/libraries
 /.idea/misc.xml
 /app/app.iml

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.login.Moove;
@@ -24,6 +25,15 @@ public class GU extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gu);
+
+//        Intent i = getIntent();
+//        Bundle extras = i.getExtras();
+//
+//        if(extras != null){
+//            if (extras.containsKey("try")){
+//                Toast.makeText(getApplicationContext(), extras.getString("try"), Toast.LENGTH_LONG).show();
+//            }
+//        }
 
         //*****************************************************************************************
         //*                                     TOOLBAR

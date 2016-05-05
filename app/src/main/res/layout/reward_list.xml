@@ -6,6 +6,12 @@
     android:focusableInTouchMode="true"
     android:background="#FFFFFF">
 
+    <!--<ListView-->
+        <!--android:id="@android:id/list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" >-->
+    <!--</ListView>-->
+
     <ImageView
         android:id="@+id/icon"
         android:layout_width="100dp"
