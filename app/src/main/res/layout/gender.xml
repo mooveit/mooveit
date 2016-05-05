@@ -40,39 +40,41 @@ android:id="@+id/textView8" />
         android:layout_height="wrap_content"
         android:background="@drawable/gender_male"
         android:layout_marginTop="60dp"
-        android:id="@+id/button"
+        android:id="@+id/button_male"
         android:layout_below="@+id/textView8"
         android:layout_alignStart="@+id/textView8" />
 
-    <ImageView
-        android:id="@+id/gender_border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/gender_border"
-        android:layout_above="@+id/next"
-        android:layout_toStartOf="@+id/button2"
-        android:layout_below="@+id/textView8" />
+    <!--<ImageView-->
+        <!--android:id="@+id/gender_border"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:src="@drawable/gender_border"-->
+        <!--android:layout_above="@+id/next"-->
+        <!--android:layout_toStartOf="@+id/button_female"-->
+        <!--android:layout_below="@+id/textView8" />-->
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/gender_female"
-        android:layout_alignTop="@+id/button"
+        android:layout_alignTop="@+id/button_male"
         android:layout_alignEnd="@+id/textView8"
-        android:id="@+id/button2" />
+        android:id="@+id/button_female" />
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:textColor="#FFFFFF"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:background="@drawable/button_login"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp" />
+
+
+    <!--<Button-->
+        <!--android:id="@+id/next"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="NEXT"-->
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:layout_marginRight="30dp"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:background="@drawable/button_login"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="58dp" />-->
 
 </RelativeLayout>

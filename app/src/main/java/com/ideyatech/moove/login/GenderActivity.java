@@ -32,8 +32,27 @@ public class GenderActivity extends AppCompatActivity {
         //myToolbar.setTitle("Back");
         getSupportActionBar().setTitle("Back");
 
-        Button next = (Button) findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
+        //******************************************************************************
+        //*                                 MALE
+        //******************************************************************************
+
+        Button male = (Button) findViewById(R.id.button_male);
+        male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), HeightActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        //******************************************************************************
+        //*                                 FEMALE
+        //******************************************************************************
+
+        Button female = (Button) findViewById(R.id.button_female);
+        female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

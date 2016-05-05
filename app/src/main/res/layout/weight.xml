@@ -47,7 +47,7 @@
         android:textSize="50dp"
         android:textColorHint="#FFFFFF"
         android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/rsv_small"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <com.github.channguyen.rsv.RangeSliderView
@@ -59,9 +59,10 @@
         android:layout_marginRight="15dp"
         rsv:filledColor="#FFFFFF"
         rsv:rangeCount="126"
-        android:layout_above="@+id/next"
-        android:layout_marginBottom="77dp"
-        android:layout_alignStart="@+id/textView3" />
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/weighttext"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/next"
