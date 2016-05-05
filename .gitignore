@@ -1,6 +1,9 @@
 .gradle
 /local.properties
 /.idea/workspace.xml
+/.idea/grade.xml
+/.idea/misc.iml
+/app/app.iml
 /.idea/libraries
 /.idea/misc.xml
 /app/app.iml
