@@ -3,11 +3,13 @@ package com.ideyatech.moove.ui.adapters;
 import java.util.List;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +44,7 @@ public class DashboardAdaptor extends BaseAdapter {
         ImageView medalView;
         TextView txtRewardComment;
         ImageView border;
+        Button arrow;
     }
 
     /**
@@ -65,6 +68,7 @@ public class DashboardAdaptor extends BaseAdapter {
             holder.medalView = (ImageView) convertView.findViewById(R.id.star);
             holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
             holder.border = (ImageView) convertView.findViewById(R.id.border);
+            holder.arrow = (Button) convertView.findViewById(R.id.arrow);
             convertView.setTag(holder);
         }
         else {
@@ -78,8 +82,14 @@ public class DashboardAdaptor extends BaseAdapter {
         holder.txtUnits.setText(dashboardRowItem.getUnit());
         holder.medalView.setImageResource(dashboardRowItem.getMedalId());
         holder.txtRewardComment.setTypeface(null, Typeface.ITALIC);
+//        if(Integer.parseInt(dashboardRowItem.getValue().toString()) > 8)
+//            holder.txtRewardComment.setTextColor(Color.parseColor("#e39493"));
         holder.imageView.setImageResource(dashboardRowItem.getImageId());
         holder.border.setImageResource(R.drawable.dashboard_fading_line);
+        if(dashboardRowItem.getArrow() == 0){
+            holder.arrow.setVisibility(View.INVISIBLE);
+        }
+        holder.arrow.setBackgroundResource(dashboardRowItem.getArrow());
 
         return convertView;
     }

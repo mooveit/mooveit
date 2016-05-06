@@ -62,7 +62,6 @@
 
     <Button
         android:id="@+id/arrow"
-        android:background="@drawable/dashboard_arrow"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="right"
@@ -70,6 +69,8 @@
         android:layout_marginLeft="235dp"
         android:layout_toEndOf="@id/icon"
         android:onClick="bar"/>
+        <!--android:background="@drawable/dashboard_arrow"-->
+
 
 
     <ImageView

@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     public static final Integer[] images = { R.drawable.dashboard_step,
             R.drawable.dashboard_fire, R.drawable.dashboard_sleep, R.drawable.dashboard_active, R.drawable.dashboard_weight};
 
-    public static final Integer[] medal = { R.drawable.dashboard_star,
-            R.drawable.dashboard_star, R.drawable.dashboard_star, R.drawable.dashboard_star, R.drawable.dashboard_star};
+    public static final Integer[] image = { R.drawable.dashboard_star, R.drawable.arrow };
 
     ListView listView;
     List<DashboardRowItem> dashboardRowItems;
@@ -111,8 +110,16 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         dashboardRowItems = new ArrayList<DashboardRowItem>();
         for (int i = 0; i < values.length; i++) {
-            DashboardRowItem item = new DashboardRowItem(images[i], values[i], units[i], medal[i], rewardComment[i]);
-            dashboardRowItems.add(item);
+                if (i == 0) {
+                    DashboardRowItem item = new DashboardRowItem(images[i], values[i], units[i], image[0], rewardComment[i], image[1]);
+                    dashboardRowItems.add(item);
+                } else if ((i == 1) || (i ==3)){
+                    DashboardRowItem item = new DashboardRowItem(images[i], values[i], units[i], image[0], rewardComment[i], 0);
+                    dashboardRowItems.add(item);
+                }else{
+                    DashboardRowItem item = new DashboardRowItem(images[i], values[i], units[i], 0, rewardComment[i], 0);
+                    dashboardRowItems.add(item);
+                }
         }
 
         listView = (ListView) findViewById(R.id.list);
@@ -122,9 +129,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 
-//        TextView sleep = (TextView) findViewById(R.id.desc);
-//        if(Integer.parseInt(sleep.getText().toString()) > 8)
-//            sleep.setTextColor(Color.parseColor("#e39493"));
 
         //*****************************************************************************************
         //*                                     BACK TO TITLE
