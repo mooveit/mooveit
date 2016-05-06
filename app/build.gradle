@@ -30,4 +30,5 @@ dependencies {
     compile 'com.github.PhilJay:MPAndroidChart:v2.0.9'
     compile 'com.github.channguyen:rsv:1.0.1'
     compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.robotpajamas.blueteeth:blueteeth:0.1.1'
 }
