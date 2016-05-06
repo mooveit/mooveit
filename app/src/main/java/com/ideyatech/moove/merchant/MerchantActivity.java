@@ -105,6 +105,7 @@ public class MerchantActivity extends AppCompatActivity implements AdapterView.O
 
     public void map(View view){
         Intent i = new Intent(getApplicationContext(), MapView.class);
+        i.putExtra("try", listView.getPositionForView(view) + "");
         startActivity(i);
     }
 

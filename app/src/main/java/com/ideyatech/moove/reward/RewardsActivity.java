@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -26,14 +25,6 @@ import java.util.List;
  * Created by kendeng on 4/22/2016.
  */
 public class RewardsActivity extends AppCompatActivity{
-
-//    public static final String[] name = new String[] {"GU Roctane Gels", "Adidas Trainer's Shoes", "Quest Bar Protein Bars", "Gold's Gym Membership"};
-//    public static final String[] merchant = new String[] {"Toby's Sports", "Adidas Philippines", "Healthy Options", "Gold's Gym Philippines"};
-//    public static final Integer[] imageId = new Integer[] {R.drawable.gurew, R.drawable.adidasrew, R.drawable.healthyrew, R.drawable.goldrew};
-//    public static final String[] description = new String[] {"Accumulate 20,000 moves to get this.", "Burn 5,000 calories in the next 24hrs to win.", "Sleep at least 8hrs for 5 consecutive days to get this", "Be active for more than 30mins. to get this."};
-//    public static final String[] expiration = new String[] {"Expires in 3-days", "Expires in 5-days", "Expires in 1-week", "Expires in 1-month"};
-//    public static final String[] mechanics = {"-sample\n-sample\n-sample", "-sample\n-sample\n-sample", "-sample\n-sample\n-sample", "-sample\n-sample\n-sample"};
-
 
 
     ListView listView;
@@ -61,7 +52,7 @@ public class RewardsActivity extends AppCompatActivity{
         listView.setAdapter(adapter);
 
         //*****************************************************************************************
-        //*                                     BACK TO TITLE
+        //*                                         BUTTONS
         //*****************************************************************************************
         Button dash = (Button) findViewById(R.id.dash);
         Button merchant = (Button) findViewById(R.id.merchant);
@@ -112,13 +103,11 @@ public class RewardsActivity extends AppCompatActivity{
     }
 
     public void claimreward(View view){
+
         TextView ty = (TextView) findViewById(R.id.name);
-        Intent i = new Intent(getApplicationContext(), GU.class);
-        i.putExtra("try", ty.getText().toString());
+        Intent i = new Intent(getApplicationContext(), ClaimRewardActivity.class);
+        //Toast.makeText(getApplicationContext(), listView.getPositionForView(view) + "", Toast.LENGTH_LONG).show();
+        i.putExtra("try", listView.getPositionForView(view) + "");
         startActivity(i);
-    }
-
-    public void onListItemClick(ListView l, View v, int position, long id){
-
     }
 }

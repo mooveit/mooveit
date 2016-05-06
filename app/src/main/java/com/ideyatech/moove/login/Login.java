@@ -89,7 +89,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                if(access) {
-//                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+
 //                    startActivity(i);
 //                }
 //                else {

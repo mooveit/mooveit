@@ -132,7 +132,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".reward.GU"
+            android:name=".reward.ClaimRewardActivity"
             android:label="GU"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >

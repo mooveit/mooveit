@@ -167,7 +167,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
      */
     public void bar(View view){
         Intent i = new Intent(getApplicationContext(), BarChartActivity.class);
-
         startActivity(i);
 
     }

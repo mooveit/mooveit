@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -150,31 +151,71 @@ public class MapView extends AppCompatActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        String[] place = {"Toby's Sports Megamall", "Toby's Sports EDSA Shangri-La", "Toby's Sports Robinson's Galleria",
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        if(extras != null){
+            if (extras.containsKey("try")){
+
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    mMap.setMyLocationEnabled(true);
+                } else {
+                    // Show rationale and request permission.
+                }
+
+                if(extras.getString("try").equals("0")) {
+                    String[] place = {"Toby's Sports Megamall", "Toby's Sports EDSA Shangri-La", "Toby's Sports Robinson's Galleria",
                             "Toby's Sports Greenbelt 3"};
-        double[] lat = {14.585124, 14.581848, 14.591471, 14.552077};
-        double[] lng = {121.057355, 121.055508, 121.059686, 121.025945};
+                    double[] lat = {14.585124, 14.581848, 14.591471, 14.552077};
+                    double[] lng = {121.057355, 121.055508, 121.059686, 121.025945};
 
-//        LatLng mega = new LatLng(14.585124, 121.057355);
-//        LatLng shang = new LatLng(14.581848, 121.055508);
-//        LatLng galle = new LatLng(14.591471, 121.059686);
-//        LatLng gb3 = new LatLng(14.552077, 121.025945);
+                    for (int i = 0 ; i < place.length ; i++){
+                        mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[i])));
+                    }
+                }
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            mMap.setMyLocationEnabled(true);
-        } else {
-            // Show rationale and request permission.
+                else if(extras.getString("try").equals("1")){
+                    String[] place = {"Adidas Philippines Megamall", "Adidas Philippines EDSA Shangri-La",
+                            "Adidas Philippines Robinson's Galleria", "Adidas Philippines Greenbelt 3"};
+                    double[] lat = {14.585124, 14.581848, 14.591471, 14.552077};
+                    double[] lng = {121.057355, 121.055508, 121.059686, 121.025945};
+
+                    for (int i = 0 ; i < place.length ; i++){
+                        mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[i])));
+                    }
+
+                    TextView rewardname = (TextView) findViewById(R.id.rewardname);
+                    rewardname.setText("Adidas Philippines");
+                }
+                else if(extras.getString("try").equals("2")){
+                    String[] place = {"Healthy Options SM Aura", "Healthy Options Greenbelt 2",
+                            " Healthy Options Powerplant Mall Rockwell", "Healthy Options Eastwood City"};
+                    double[] lat = {14.546014, 14.551247, 14.564745, 14.610410};
+                    double[] lng = {121.054215, 121.020285, 121.036519, 121.080038};
+
+                    for (int i = 0 ; i < place.length ; i++){
+                        mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[i])));
+                    }
+
+                    TextView rewardname = (TextView) findViewById(R.id.rewardname);
+                    rewardname.setText("Healthy Options");
+                }
+                else if(extras.getString("try").equals("3")){
+                    String[] place = {"Gold's Gym Philippines Robinson's Galleria", "Gold's Gym Philippines E. Rodriguez Jr. Ave.",
+                            "Gold's Gym Philippines New Manila"};
+                    double[] lat = {14.591471, 14.604764, 14.623829};
+                    double[] lng = {121.059686, 121.079017, 121.031823};
+
+                    for (int i = 0 ; i < place.length ; i++){
+                        mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[i])));
+                    }
+
+                    TextView rewardname = (TextView) findViewById(R.id.rewardname);
+                    rewardname.setText("Gold's Gym Philippines");
+                }
+            }
         }
-
-        for (int i = 0 ; i < 4 ; i++){
-            mMap.addMarker((new MarkerOptions().position(new LatLng(lat[i], lng[i])).title(place[i])));
-        }
-
-//        mMap.addMarker(new MarkerOptions().position(mega).title("Toby's Sports Megamall"));
-//        mMap.addMarker(new MarkerOptions().position(shang).title("Toby's Sports EDSA Shangri-La"));
-//        mMap.addMarker(new MarkerOptions().position(galle).title("Toby's Sports Robinson's Galleria"));
-//        mMap.addMarker(new MarkerOptions().position(gb3).title("Toby's Sports Greenbelt 3"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(getlat(), getlng()), 15));
     }
 

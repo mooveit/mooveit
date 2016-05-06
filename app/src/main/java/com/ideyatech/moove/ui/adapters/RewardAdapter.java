@@ -48,6 +48,7 @@ public class RewardAdapter extends BaseAdapter  {
             convertView = mInflater.inflate(R.layout.reward_list, null);
             holder = new ViewHolder();
             holder.txtName = (TextView) convertView.findViewById(R.id.name);
+            convertView.findViewById(R.id.name).setTag(position);
             holder.txtMerchant = (TextView) convertView.findViewById(R.id.merchant);
             holder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
             holder.txtExp = (TextView) convertView.findViewById(R.id.exp);
@@ -88,4 +89,5 @@ public class RewardAdapter extends BaseAdapter  {
     public long getItemId(int position) {
         return rewardItems.indexOf(getItem(position));
     }
+
 }
