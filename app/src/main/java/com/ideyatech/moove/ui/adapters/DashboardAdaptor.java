@@ -82,8 +82,6 @@ public class DashboardAdaptor extends BaseAdapter {
         holder.txtUnits.setText(dashboardRowItem.getUnit());
         holder.medalView.setImageResource(dashboardRowItem.getMedalId());
         holder.txtRewardComment.setTypeface(null, Typeface.ITALIC);
-//        if(Integer.parseInt(dashboardRowItem.getValue().toString()) > 8)
-//            holder.txtRewardComment.setTextColor(Color.parseColor("#e39493"));
         holder.imageView.setImageResource(dashboardRowItem.getImageId());
         holder.border.setImageResource(R.drawable.dashboard_fading_line);
         if(dashboardRowItem.getArrow() == 0){
