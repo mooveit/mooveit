@@ -10,6 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.ideyatech.moove.R;
+import com.polidea.rxandroidble.RxBleClient;
+
+import rx.Subscription;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by kendeng on 4/27/2016.
@@ -34,6 +40,12 @@ public class SearchDeviceActivity extends AppCompatActivity {
 
         PreloaderSearchDevice pGif = (PreloaderSearchDevice) findViewById(R.id.viewGif);
         pGif.setImageResource(R.drawable.login_preloader);
+
+        //****************************************************************************************
+        //*
+        //****************************************************************************************
+
+
 
         Button next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
