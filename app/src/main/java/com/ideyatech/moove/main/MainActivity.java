@@ -1,44 +1,43 @@
 package com.ideyatech.moove.main;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.hardware.*;
-import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.fitness.Fitness;
+import com.google.android.gms.fitness.FitnessStatusCodes;
 import com.google.android.gms.fitness.data.DataPoint;
 import com.google.android.gms.fitness.data.DataSource;
 import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
 import com.google.android.gms.fitness.data.Value;
+import com.google.android.gms.fitness.request.DataReadRequest;
 import com.google.android.gms.fitness.request.DataSourcesRequest;
 import com.google.android.gms.fitness.request.OnDataPointListener;
 import com.google.android.gms.fitness.request.SensorRequest;
+import com.google.android.gms.fitness.result.DataReadResult;
 import com.google.android.gms.fitness.result.DataSourcesResult;
+import com.google.android.gms.plus.Plus;
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.barchart.BarChartActivity;
 import com.ideyatech.moove.login.Moove;
@@ -48,13 +47,16 @@ import com.ideyatech.moove.ui.adapters.DashboardAdaptor;
 import com.ideyatech.moove.ui.beans.DashboardRowItem;
 
 
-public class MainActivity extends AppCompatActivity implements OnItemClickListener, SensorEventListener {
+public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
     private SensorManager sensorManager;
-    private TextView count;
-    boolean activityRunning;
     private GoogleApiClient mClient = null;
     private OnDataPointListener mListener;
+
+    boolean activityRunning;
+
+
+    private static final int REQUEST_OAUTH = 1001;
 
     public static final String[] values = new String[] { "0",
             "20,000", "12", "8", "75"};
@@ -91,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         Log.d("HELLO", "SONNY 1");
 
         setContentView(R.layout.activity_main);
-
-        buildFitnessClient();
 
         //*****************************************************************************************
         //*                                     TOOLBAR
@@ -157,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         listView.setDivider(null);
         DashboardAdaptor adapter = new DashboardAdaptor(this, dashboardRowItems);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(this);
 
 
         //*****************************************************************************************
@@ -174,26 +173,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     }
 
-
-
-    /**
-     *
-     * @param parent
-     * @param view
-     * @param position
-     * @param id
-     */
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-                            long id) {
-//        Toast toast = Toast.makeText(getApplicationContext(),
-//                "Item " + (position + 1) + ": " + dashboardRowItems.get(position),
-//                Toast.LENGTH_SHORT);
-//        toast.setGravity(Gravity.BOTTOM| Gravity.CENTER_HORIZONTAL, 0, 0);
-//        toast.show();
-//        Log.d("king", "garcia");
-
-    }
 
     /**
      *
@@ -213,24 +192,26 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     protected void onResume() {
         super.onResume();
         Log.d("HELLO", "SONNY 3");
-//        activityRunning = true;
-//        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-//        if (countSensor != null) {
-//            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
-//        } else {
-//            Toast.makeText(this, "Count sensor not available!", Toast.LENGTH_LONG).show();
-//        }
 
+        //*****************************************************************************************
+        //*                   WARNING!! DO NOT REMOVE!! FOR PHONE SENSOR ONLY
+        //*****************************************************************************************
+        activityRunning = true;
+        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        if (countSensor != null) {
+            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+        } else {
+            Toast.makeText(this, "Count sensor not available!", Toast.LENGTH_LONG).show();
+        }
     }
 
-//    @Override
-//    public void onStart(){
-//        Log.d("HELLO", "Sonny Connect 1");
-//        super.onStart();
-//        Log.d("HELLO", "Sonny Connect 2");
-//        mClient.connect();
-//        Log.d("HELLO", "Sonny Connect 3");
-//    }
+    @Override
+    public void onStart(){
+        Log.d("HELLO", "Sonny Connect 1");
+        super.onStart();
+        Log.d("HELLO", "Sonny Connect 2");
+        buildFitnessClient();
+    }
 
     @Override
     protected void onPause() {
@@ -240,6 +221,10 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 //        sensorManager.unregisterListener(this);
     }
 
+    /**
+     *
+     * @param event
+     */
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (activityRunning) {
@@ -266,7 +251,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
             Log.d("HELLO", "SONNY 4.4");
             mClient = new GoogleApiClient.Builder(this)
-                    .addApi(Fitness.RECORDING_API)
+                    .addApi(Fitness.SENSORS_API)
+                    .useDefaultAccount()
                     .addScope(new Scope(Scopes.FITNESS_ACTIVITY_READ))
                     .addConnectionCallbacks(
                             new GoogleApiClient.ConnectionCallbacks() {
@@ -276,6 +262,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                                     Log.i("MAIN", "Connected!!!");
                                     Log.d("HELLO", "SONNY 4.5");
                                     // Now you can make calls to the Fitness APIs.
+//                                    findFitnessDataSources();
                                     findFitnessDataSources();
                                 }
 
@@ -297,16 +284,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                         @Override
                         public void onConnectionFailed(ConnectionResult result) {
                             Log.d("HELLO", "SONNY 4.7");
-                            Log.i("MAIN", "Google Play services connection failed. Cause: " +
-                                    result.toString());
-//                            Snackbar.make(
-//                                    MainActivity.this.findViewById(R.id.main_activity_view),
-//                                    "Exception while connecting to Google Play services: " +
-//                                            result.getErrorMessage(),
-//                                    Snackbar.LENGTH_INDEFINITE).show();
+                            Log.i("MAIN", "Google Play services connection failed. Cause: " + result.toString());
                         }
                     })
                     .build();
+
+            mClient.connect();
         }
 
 
@@ -317,22 +300,22 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
      */
     private void registerFitnessDataListener(DataSource dataSource, DataType dataType) {
         Log.i("HELLO", "SONNY 9");
-        // [START register_data_listener]
-        mListener = new OnDataPointListener() {
+       mListener = new OnDataPointListener() {
             @Override
             public void onDataPoint(DataPoint dataPoint) {
+
+                Log.i("HELLO", "SONNY 9.1.1");
                 for (Field field : dataPoint.getDataType().getFields()) {
+                    Log.i("HELLO", "SONNY 9.1.1.1");
                     Value val = dataPoint.getValue(field);
-                    Log.i("HELLO", "SONNY 9.9");
-                    Log.i("MAIN", "Detected DataPoint field: " + field.getName());
-                    Log.i("MAIN", "Detected DataPoint value: " + val);
+                    updateTextViewWithStepCounter(val.asInt());
                 }
             }
         };
 
-        //******************************************************************************************
-        //*                                             NOY
-        //******************************************************************************************
+        Log.i("HELLO", "SONNY 9.2");
+        Log.i("HELLO", "SONNY 9.2.1 " + dataSource.getName());
+        Log.i("HELLO", "SONNY 9.2.2 " + dataType.getName());
 
         Fitness.SensorsApi.add(
                 mClient,
@@ -357,50 +340,57 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     /**
      *
-     * @return
+     * @param numberOfSteps
      */
-    private boolean checkPermissions(){
-
-        String permission = "android.permission.ACCESS_FINE_LOCATION";
-        int res = this.checkCallingOrSelfPermission(permission);
-        return (res == PackageManager.PERMISSION_GRANTED);
+    private void updateTextViewWithStepCounter(final int numberOfSteps) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getBaseContext(), "On Datapoint!",
+                        Toast.LENGTH_SHORT);
+                values[0] =String.valueOf(numberOfSteps);
+            }
+        });
     }
-
 
     /**
      *
      * @return
      */
-    private void findFitnessDataSources(){
+    private void findFitnessDataSources() {
+        Log.d("HELLO", "SONNY 7");
 
-//        Log.d("HELLO", "SONNY 7");
-//        // Note: Fitness.SensorsApi.findDataSources() requires the ACCESS_FINE_LOCATION permission.
-//        Fitness.RECORDING_API.getName().findDataSources(mClient, new DataSourcesRequest.Builder()
-//                // At least one datatype must be specified.
-//                .setDataTypes(DataType.TYPE_STEP_COUNT_CUMULATIVE)
-//                        // Can specify whether data type is raw or derived.
-//                .setDataSourceTypes(DataSource.TYPE_RAW)
-//                .build())
-//                .setResultCallback(new ResultCallback<DataSourcesResult>() {
-//                    @Override
-//                    public void onResult(DataSourcesResult dataSourcesResult) {
-//                        Log.i("MAIN", "Result: " + dataSourcesResult.getStatus().toString());
-//                        for (DataSource dataSource : dataSourcesResult.getDataSources()) {
-//                            Log.i("MAIN", "Data source found: " + dataSource.toString());
-//                            Log.i("MAIN", "Data Source type: " + dataSource.getDataType().getName());
-//
-//                            //Let's register a listener to receive Activity data!
-//                            if (dataSource.getDataType().equals(DataType.TYPE_STEP_COUNT_CUMULATIVE)
-//                                    && mListener == null) {
-//                                Log.i("MAIN", "Data source for LOCATION_SAMPLE found!  Registering.");
-//                                registerFitnessDataListener(dataSource,
-//                                        DataType.TYPE_STEP_COUNT_CUMULATIVE);
-//                            }
-//                        }
-//                    }
-//                });
+        // Note: Fitness.SensorsApi.findDataSources() requires the ACCESS_FINE_LOCATION permission.
+        Fitness.SensorsApi.findDataSources(mClient, new DataSourcesRequest.Builder()
+                // At least one datatype must be specified.
+                .setDataTypes(DataType.TYPE_STEP_COUNT_DELTA)
+                        // Can specify whether data type is raw or derived.
+                .setDataSourceTypes(DataSource.TYPE_DERIVED)
+                .build())
+                .setResultCallback(new ResultCallback<DataSourcesResult>() {
+                    @Override
+                    public void onResult(DataSourcesResult dataSourcesResult) {
+                        Log.d("HELLO", "SONNY 7.1");
+                        Log.i("MAIN:", "Result: " + dataSourcesResult.getStatus().toString());
+                        if(dataSourcesResult.getDataSources().isEmpty()){
+                            Log.d("EMPTY", "EMPTY");
+                        }
+
+                        for (DataSource dataSource : dataSourcesResult.getDataSources()) {
+                            Log.i("MAIN:", "Data source found: " + dataSource.toString());
+                            Log.i("MAIN:", "Data Source type: " + dataSource.getDataType().getName());
+                            Log.d("HELLO", "SONNY 7.2");
+                            //Let's register a listener to receive Activity data!
+                            if (dataSource.getDataType().equals(DataType.TYPE_STEP_COUNT_DELTA)
+                                    && mListener == null) {
+                                Log.i("MAIN:", "Data source for LOCATION_SAMPLE found!  Registering.");
+                                Log.d("HELLO", "SONNY 7.3");
+                                registerFitnessDataListener(dataSource,
+                                        DataType.TYPE_STEP_COUNT_DELTA);
+                            }
+                        }
+                    }
+                });
+
     }
-
-
-
 }

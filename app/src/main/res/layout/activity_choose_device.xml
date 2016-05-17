@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#27AEF0">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/toolbar_moove"
+        android:paddingTop="30dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="10mm"
+        android:textColor="#FFFFFF"
+        android:text="Mobile Phone"
+        android:background="#27AEF0"
+        android:id="@+id/choosedevicebutton1"
+        android:layout_below="@+id/icon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="78dp"
+        android:layout_alignParentStart="true"
+        android:onClick="connectToGoogle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="10mm"
+        android:textColor="#FFFFFF"
+        android:text="FitBit"
+        android:id="@+id/choosedevicebutton2"
+        android:background="#27AEF0"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/choosedevicebutton1"
+        android:layout_alignParentStart="true"
+        android:onClick="connectToGoogle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="10mm"
+        android:textColor="#FFFFFF"
+        android:text="MizFit"
+        android:id="@+id/choosedevicebutton3"
+        android:background="#27AEF0"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/choosedevicebutton2"
+        android:onClick="connectToGoogle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="10mm"
+        android:textColor="#FFFFFF"
+        android:text="Pebble"
+        android:background="#27AEF0"
+        android:id="@+id/choosedevicebutton4"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/choosedevicebutton3"
+        android:layout_alignParentStart="true"
+        android:onClick="connectToGoogle"/>
+
+</RelativeLayout>

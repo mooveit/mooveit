@@ -11,12 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ideyatech.moove.R;
 import com.ideyatech.moove.login.Moove;
+import com.ideyatech.moove.main.MainActivity;
 import com.ideyatech.moove.merchant.MerchantActivity;
 import com.ideyatech.moove.reward.RewardsActivity;
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ideyatech.moove.R;
+import com.ideyatech.moove.device.ChooseDevice;
 
 /**
  * Created by kendeng on 4/25/2016.
@@ -25,7 +26,7 @@ public class Moove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), Login.class);
+                Intent i = new Intent(getApplicationContext(), ChooseDevice.class);
                 startActivity(i);
 
             }
